@@ -1,0 +1,3081 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Coddie.Data</name>
+    </assembly>
+    <members>
+        <member name="T:Coddie.Data.DbCommandBuilder">
+            <summary>
+            Defines the <see cref="T:Coddie.Data.DbCommandBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.DbCommandBuilder.CreateCommandWithOptions(System.Data.IDbConnection,Coddie.Data.Objects.DbCommandDefinition,System.Data.IDbTransaction)">
+            <summary>
+            Create IDbCommand instance with command definition and db transaction for given db connection.
+            </summary>
+            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="commandDefinition">Command Definition <see cref="T:Coddie.Data.Objects.DbCommandDefinition"/>.</param>
+            <param name="transaction">Database transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
+            <returns>The <see cref="T:System.Data.IDbCommand"/>.</returns>
+        </member>
+        <member name="T:Coddie.Data.AnyOperator">
+            <summary>
+            Defines the <see cref="T:Coddie.Data.AnyOperator"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.AnyOperator.Any(System.Data.IDbConnection,System.String,System.Object,System.Data.CommandType,System.Data.IDbTransaction)">
+            <summary>
+            The Any.
+            </summary>
+            <param name="connection">The connection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="sqlText">The sqlText <see cref="T:System.String"/>.</param>
+            <param name="obj">The obj <see cref="T:System.Object"/>.</param>
+            <param name="commandType">The commandType <see cref="T:System.Data.CommandType"/>.</param>
+            <param name="transaction">The transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
+            <returns>The <see cref="T:System.Boolean"/>.</returns>
+        </member>
+        <member name="M:Coddie.Data.AnyOperator.Any(System.Data.IDbConnection,Coddie.Data.Objects.DbCommandDefinition,System.Data.IDbTransaction)">
+            <summary>
+            The Any.
+            </summary>
+            <param name="connection">The connection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="commandDefinition">The commandDefinition <see cref="T:Coddie.Data.Objects.DbCommandDefinition"/>.</param>
+            <param name="transaction">The transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
+            <returns>The <see cref="T:System.Boolean"/>.</returns>
+        </member>
+        <member name="M:Coddie.Data.AnyOperator.Any(System.Data.IDbConnection,System.String,System.Object[],System.Data.CommandType,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            The Any.
+            </summary>
+            <param name="connection">The connection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="odbcSqlQuery">The odbcSqlQuery <see cref="T:System.String"/>.</param>
+            <param name="parameterValues">The parameterValues <see cref="!:object[]"/>.</param>
+            <param name="commandType">The commandType <see cref="T:System.Data.CommandType"/>.</param>
+            <param name="transaction">The transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
+            <param name="commandTimeout">The commandTimeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>The <see cref="T:System.Boolean"/>.</returns>
+        </member>
+        <member name="T:Coddie.Data.ConnectionExtensions.CountOperator">
+            <summary>
+            Defines the <see cref="T:Coddie.Data.ConnectionExtensions.CountOperator"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.ConnectionExtensions.CountOperator.Count(System.Data.IDbConnection,Coddie.Data.Objects.DbCommandDefinition,System.Data.IDbTransaction)">
+            <summary>
+            counts rows for given sql query and command definition.
+            </summary>
+            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/></param>
+            <param name="commandDefinition">Command Definition <see cref="T:Coddie.Data.Objects.DbCommandDefinition"/></param>
+            <param name="transaction">Database transaction <see cref="T:System.Data.IDbTransaction"/></param>
+            <returns>Returns row count as int value <see cref="T:System.Int32"/>.</returns>
+        </member>
+        <member name="M:Coddie.Data.ConnectionExtensions.CountOperator.CountLong(System.Data.IDbConnection,Coddie.Data.Objects.DbCommandDefinition,System.Data.IDbTransaction)">
+            <summary>
+            counts rows as long for given sql query and command definition.
+            </summary>
+            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/></param>
+            <param name="commandDefinition">Command Definition <see cref="T:Coddie.Data.Objects.DbCommandDefinition"/></param>
+            <param name="transaction">Database transaction <see cref="T:System.Data.IDbTransaction"/></param>
+            <returns>Returns row count as long value <see cref="T:System.Int64"/>.</returns>
+        </member>
+        <member name="M:Coddie.Data.ConnectionExtensions.CountOperator.Count(System.Data.IDbConnection,System.String,System.Object,System.Data.CommandType,System.Data.IDbTransaction)">
+            <summary>
+            counts rows for given sql query and parameters.
+            </summary>
+            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="sql">Sql query <see cref="T:System.String"/>.</param>
+            <param name="obj">object which has parameters as property <see cref="T:System.Object"/>.</param>
+            <param name="commandType">Command Type <see cref="T:System.Data.CommandType"/>.</param>
+            <param name="transaction">Database transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
+            <returns>Returns row count as int value <see cref="T:System.Int32"/>.</returns>
+        </member>
+        <member name="M:Coddie.Data.ConnectionExtensions.CountOperator.CountLong(System.Data.IDbConnection,System.String,System.Object,System.Data.CommandType,System.Data.IDbTransaction)">
+            <summary>
+            counts rows as long for given sql query and parameters.
+            </summary>
+            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="sql">Sql query <see cref="T:System.String"/>.</param>
+            <param name="obj">object which has parameters as property <see cref="T:System.Object"/>.</param>
+            <param name="commandType">Command Type <see cref="T:System.Data.CommandType"/>.</param>
+            <param name="transaction">Database transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
+            <returns>Returns row count as long value <see cref="T:System.Int64"/>.</returns>
+        </member>
+        <member name="M:Coddie.Data.ConnectionExtensions.CountOperator.Count(System.Data.IDbConnection,System.String,System.Object[],System.Data.CommandType,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            counts rows for given odbc sql query and parameters.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="odbcSqlQuery">
+            The ODBC SQL query.Like SELECT * FROM TABLE_NAME WHERE COLUMN2 &gt; ? AND COLUMN3 = TRUNC(?)
+            </param>
+            <param name="parameterValues">Sql command parameter values.</param>
+            <param name="commandType">Command type.</param>
+            <param name="transaction">Database transaction.</param>
+            <param name="commandTimeout">DbCommand timeout</param>
+            <returns>Returns row count as int value <see cref="T:System.Int32"/>.</returns>
+        </member>
+        <member name="M:Coddie.Data.ConnectionExtensions.CountOperator.CountLong(System.Data.IDbConnection,System.String,System.Object[],System.Data.CommandType,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            counts rows as long value for given odbc sql query and parameters.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="odbcSqlQuery">
+            The ODBC SQL query.Like SELECT * FROM TABLE_NAME WHERE COLUMN2 &gt; ? AND COLUMN3 = TRUNC(?)
+            </param>
+            <param name="parameterValues">Sql command parameter values.</param>
+            <param name="commandType">Command type.</param>
+            <param name="transaction">Database transaction(optional).</param>
+            <param name="commandTimeout">command timeout(optional).</param>
+            <returns>Returns count value as long.</returns>
+        </member>
+        <member name="T:Coddie.Data.DbConnectionExtension">
+            <summary>
+            Defines the <see cref="T:Coddie.Data.DbConnectionExtension"/>.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.DbConnectionExtension.dbCommandParameterTypePairs">
+            <summary>
+            The database comand pairs
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.DbConnectionExtension.GetServerVersion(System.Data.IDbConnection)">
+            <summary>
+            Gets Server Version of database connection.
+            </summary>
+            <param name="connection">Database Connection.</param>
+            <returns>The server version of db connection.</returns>
+        </member>
+        <member name="M:Coddie.Data.DbConnectionExtension.GetConnectionStringBuilder(System.Data.IDbConnection)">
+            <summary>
+            Gets Connection String Builder of database connection.
+            </summary>
+            <param name="connection">Database Connection.</param>
+            <returns>The connection string builder.</returns>
+        </member>
+        <member name="M:Coddie.Data.DbConnectionExtension.CloseIfNot(System.Data.IDbConnection)">
+            <summary>
+            Closes DbConnection if not closed.
+            </summary>
+            <param name="connection">Database Connection.</param>
+        </member>
+        <member name="M:Coddie.Data.DbConnectionExtension.OpenIfNot(System.Data.IDbConnection)">
+            <summary>
+            Opens DbConnection if not opened.
+            </summary>
+            <param name="connection">Database Connection.</param>
+            <exception cref="T:System.ArgumentNullException">if connection parameter is null, throws exception, else not.</exception>
+        </member>
+        <member name="M:Coddie.Data.DbConnectionExtension.OpenAndBeginTransaction(System.Data.IDbConnection,System.Nullable{System.Data.IsolationLevel})">
+            <summary>
+            Opens connection and Begins a DbTransaction.
+            </summary>
+            <param name="connection">Database Connection.</param>
+            <param name="isolationLevel">(Optional) Transaction isolation level.</param>
+            <returns>An IDbTransaction instance.</returns>
+            <exception cref="T:System.ArgumentNullException">if connection parameter is null, throws exception, else not.</exception>
+        </member>
+        <member name="M:Coddie.Data.DbConnectionExtension.GetQuerySetting(System.Data.IDbConnection)">
+            <summary>
+            Gets Query Setting.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Data.DbConnectionExtension.CreateAdapter(System.Data.IDbConnection)">
+            <summary>
+            Gets DbDataAdapter instance of database connection.
+            </summary>
+            <param name="connection">Database connection</param>
+            <returns>Returns DbDataAdapter instance.</returns>
+        </member>
+        <member name="M:Coddie.Data.DbConnectionExtension.CreateDbCommandParameter(System.Data.IDbConnection,System.String,System.Object,System.Nullable{System.Data.DbType},System.Data.ParameterDirection)">
+            <summary>
+            Creates Db Parameter.
+            </summary>
+            <param name="connection">Database connection</param>
+            <param name="parameterName">Parameter name</param>
+            <param name="value">Parameter value</param>
+            <param name="dbType">Parameter Db Type</param>
+            <param name="direction">Parameter direction</param>
+            <returns>Returns DbCommand instance.</returns>
+        </member>
+        <member name="M:Coddie.Data.DbConnectionExtension.GetCommandParameterFromConnection(System.Data.IDbConnection)">
+            <summary>
+            Gets the command parameter from connection.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <returns>Returns Type of DbParameter class of this DbConnection class.</returns>
+        </member>
+        <member name="M:Coddie.Data.DbConnectionExtension.BuildDbCommand(System.Data.IDbConnection,System.String,System.Data.Common.DbParameter[],System.Data.CommandType,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            Builds the database command.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="sql">Sql Query.</param>
+            <param name="parameters">Command parameters.</param>
+            <param name="commandType">Type of the command.</param>
+            <param name="transaction">Database transaction.</param>
+            <param name="commandTimeout">command Timeout (value as second)</param>
+            <returns>Returns DbCommand instance.</returns>
+        </member>
+        <member name="M:Coddie.Data.DbConnectionExtension.IsOpen(System.Data.IDbConnection)">
+            <summary>
+            Checks DbConnection is open.
+            </summary>
+            <param name="connection">Database Connection.</param>
+            <returns>Returns true if connection is open returns true, else returns false.</returns>
+            <exception cref="T:System.ArgumentNullException">if connection parameter is null, throws exception, else not.</exception>
+        </member>
+        <member name="M:Coddie.Data.DbConnectionExtension.IsClosed(System.Data.IDbConnection)">
+            <summary>
+            Checks DbConnection is closed.
+            </summary>
+            <param name="connection">Database Connection.</param>
+            <returns>Returns true if connection is closed returns true, else returns false.</returns>
+            <exception cref="T:System.ArgumentNullException">if connection parameter is null, throws exception, else not.</exception>
+        </member>
+        <member name="M:Coddie.Data.DbConnectionExtension.CheckConnectionIsNull(System.Data.IDbConnection)">
+            <summary>
+            Checks DbConnection is null.
+            </summary>
+            <param name="connection">Database Connection.</param>
+            <exception cref="T:System.ArgumentNullException">if connection parameter is null, throws exception, else not.</exception>
+        </member>
+        <member name="T:Coddie.Data.DynamicListOperator">
+            <summary>
+            Defines the <see cref="T:Coddie.Data.DynamicListOperator"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.DynamicListOperator.QueryMultiDynamicList(System.Data.IDbConnection,System.String,System.Object,System.Data.CommandType,System.Data.IDbTransaction,System.Nullable{System.Char})">
+            <summary>
+            QueryMultiListDynamic Gets query multi result set as multi expando object list.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="sqlText">Sql query.
+            if parameterNamePrefix is ? and Query: Select * From TableName Where Column1 = ?p1?
+            Then;
+            Query For Oracle ==> Select * From TableName Where Column1 = :p1
+            Query For Sql Server ==> Select * From TableName Where Column1 = @p1
+            if parameterNamePrefix is null and Query: Select * From TableName Where Column1 = :p1 (for PostgreSql)
+            no conversion occured.
+            </param>
+            <param name="obj">object contains db parameters as property.</param>
+            <param name="commandType">Command type.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <param name="parameterNamePrefix">Parameter Name Prefix for Rebuild Query</param>
+            <returns>Returns list of dynamic object list.</returns>
+        </member>
+        <member name="M:Coddie.Data.DynamicListOperator.GetDynamicListQuery(System.Data.IDbConnection,Coddie.Data.Objects.DbCommandDefinition,System.Data.IDbTransaction,System.Nullable{System.Data.CommandBehavior})">
+            <summary>
+            GetDynamicResultSetQuery Gets query result set as dynamic object list.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="commandDefinition">Command Definition.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <param name="behavior">The behavior <see cref="T:System.Nullable`1"/>.</param>
+            <returns>Returns dynamic object list.</returns>
+        </member>
+        <member name="M:Coddie.Data.DynamicListOperator.GetMultiDynamicListQuery(System.Data.IDbConnection,Coddie.Data.Objects.DbCommandDefinition,System.Data.IDbTransaction,System.Nullable{System.Data.CommandBehavior})">
+            <summary>
+            GetMultiDynamicResultSetQuery Gets query multi result set as multi expando object list.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="commandDefinition">Command Definition.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <param name="behavior">The behavior <see cref="T:System.Nullable`1"/>.</param>
+            <returns>Returns multi expando object list.</returns>
+        </member>
+        <member name="M:Coddie.Data.DynamicListOperator.GetListAsDynamic(System.Data.IDbConnection,System.String,System.Object[],System.Data.CommandType,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            GetList Gets odbc sql query result set as dynamic object list.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="odbcSqlQuery">The ODBC SQL query.</param>
+            <param name="parameterValues">Sql command parameter values.</param>
+            <param name="commandType">Type of the command.</param>
+            <param name="transaction">Database transaction.</param>
+            <param name="commandTimeout">DbCommand timeout</param>
+            <returns>Returns dynamic object list.</returns>
+        </member>
+        <member name="T:Coddie.Data.DynamicPagedListOperator">
+            <summary>
+            Defines the <see cref="T:Coddie.Data.DynamicPagedListOperator"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.DynamicPagedListOperator.QueryDynamicList(System.Data.IDbConnection,System.String,System.Object,System.Data.CommandType,System.Data.IDbTransaction,Coddie.Data.Interfaces.IPageInfo,System.Nullable{System.Char})">
+            <summary>
+            QueryListSkipAndTakeDynamic Gets query resultset as expando object list with paging option.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="sqlText">Sql query.
+            if parameterNamePrefix is ? and Query: Select * From TableName Where Column1 = ?p1?
+            Then;
+            Query For Oracle ==> Select * From TableName Where Column1 = :p1
+            Query For Sql Server ==> Select * From TableName Where Column1 = @p1
+            if parameterNamePrefix is null and Query: Select * From TableName Where Column1 = :p1 (for PostgreSql)
+            no conversion occured.
+            </param>
+            <param name="obj">object contains db parameters as property.</param>
+            <param name="commandType">Command type.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <param name="pageInfo">page info for skip and take counts. it is optional.
+            if it is null then paging will be disabled.
+            </param>
+            <param name="parameterNamePrefix">Parameter Name Prefix for Rebuild Query</param>
+            <returns>Returns dynamic object list.</returns>
+        </member>
+        <member name="M:Coddie.Data.DynamicPagedListOperator.GetDynamicList(System.Data.IDbConnection,Coddie.Data.Objects.DbCommandDefinition,System.Data.IDbTransaction,Coddie.Data.Interfaces.IPageInfo)">
+            <summary>
+            GetDynamicResultSetSkipAndTake Gets query resultset as dynamic object list with skip and take.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="commandDefinition">Command Definition.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <param name="pageInfo">page info for skip and take counts. it is optional. if it is null then paging will be disabled.</param>
+            <returns>Returns dynamic object list.</returns>
+        </member>
+        <member name="M:Coddie.Data.DynamicPagedListOperator.SelectDynamicList(System.Data.IDbConnection,System.String,System.Object[],Coddie.Data.Interfaces.IPageInfo,System.Data.CommandType,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            Get List the specified ODBC SQL query.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="odbcSqlQuery">The ODBC SQL query.</param>
+            <param name="values">The parameters.</param>
+            <param name="pageInfo">page info for skip and take counts. it is optional. 
+            if it is null then paging will be disabled.</param>
+            <param name="commandType">Type of the command.</param>
+            <param name="transaction">Database transaction.</param>
+            <param name="commandTimeout">DbCommand timeout</param>
+            <returns>Returns as object list.</returns>
+        </member>
+        <member name="T:Coddie.Data.ExecuteOperator">
+            <summary>
+            Defines the <see cref="T:Coddie.Data.ExecuteOperator"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.ExecuteOperator.Execute(System.Data.IDbConnection,System.String,System.Object,System.Data.CommandType,System.Data.IDbTransaction)">
+            <summary>
+            Executes query and returns result as int.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="sqlQuery">Sql query.</param>
+            <param name="obj">object contains db parameters as property.</param>
+            <param name="commandType">Command type.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <returns>Returns exection result as int.</returns>
+        </member>
+        <member name="M:Coddie.Data.ExecuteOperator.ExecuteAsLong(System.Data.IDbConnection,System.String,System.Object,System.Data.CommandType,System.Data.IDbTransaction)">
+            <summary>
+            Executes query and returns result as long.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="sqlQuery">The SQL text.</param>
+            <param name="obj">object contains db parameters as property.</param>
+            <param name="commandType">(Optional) Command type.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <returns>Returns execution result as long.</returns>
+        </member>
+        <member name="M:Coddie.Data.ExecuteOperator.ExecuteAsDecimal(System.Data.IDbConnection,System.String,System.Object,System.Data.CommandType,System.Data.IDbTransaction)">
+            <summary>
+            Executes query and returns result as decimal.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="sqlQuery">The SQL text.</param>
+            <param name="obj">object contains db parameters as property.</param>
+            <param name="commandType">(Optional) Command type.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <returns>Returns execution result as decimal.</returns>
+        </member>
+        <member name="M:Coddie.Data.ExecuteOperator.ExecuteQuery(System.Data.IDbConnection,Coddie.Data.Objects.DbCommandDefinition,System.Data.IDbTransaction)">
+            <summary>
+            Executes query and returns result as int.
+            </summary>
+            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/></param>
+            <param name="commandDefinition">Db Command Definition <see cref="T:Coddie.Data.Objects.DbCommandDefinition"/></param>
+            <param name="transaction">Database transaction <see cref="T:System.Data.IDbTransaction"/></param>
+            <returns>Returns execution result as int. <see cref="!:IDbCommandResult&lt;System.Int32&gt;"/></returns>
+        </member>
+        <member name="M:Coddie.Data.ExecuteOperator.ExecuteAsOdbc(System.Data.IDbConnection,System.String,System.Object[],System.Data.CommandType,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            Executes the specified ODBC SQL query.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="odbcSqlQuery">The ODBC SQL query.</param>
+            <param name="parameterValues">Sql command parameters.</param>
+            <param name="commandType">Type of the command.</param>
+            <param name="transaction">Database transaction.</param>
+            <param name="commandTimeout">command timeout</param>
+            <returns>Returns execution result as int.</returns>
+        </member>
+        <member name="M:Coddie.Data.ExecuteOperator.ExecuteAsync(System.Data.IDbConnection,System.String,System.Object,System.Data.CommandType,System.Data.IDbTransaction)">
+            <summary>
+            An IDbConnection extension method that executes the asynchronous operation.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="sqlQuery">Sql query.</param>
+            <param name="obj">object contains db parameters as property.</param>
+            <param name="commandType">(Optional) Type of the command.</param>
+            <param name="transaction">(Optional) The transaction.</param>
+            <returns>An asynchronous result that yields the execute.</returns>
+        </member>
+        <member name="M:Coddie.Data.ExecuteOperator.ExecuteAsLongAsync(System.Data.IDbConnection,System.String,System.Object,System.Data.CommandType,System.Data.IDbTransaction)">
+            <summary>
+            An IDbConnection extension method that executes the asynchronous operation result
+            returns as long.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="sqlQuery">Sql query.</param>
+            <param name="obj">object contains db parameters as property.</param>
+            <param name="commandType">Command type.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <returns>.</returns>
+        </member>
+        <member name="M:Coddie.Data.ExecuteOperator.ExecuteAsDecimalAsync(System.Data.IDbConnection,System.String,System.Object,System.Data.CommandType,System.Data.IDbTransaction)">
+            <summary>
+            An IDbConnection extension method that executes the asynchronous operation result
+            returns as decimal.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="sqlQuery">Sql query.</param>
+            <param name="obj">object contains db parameters as property.</param>
+            <param name="commandType">Command type.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <returns>An asynchronous result that yields the execute.</returns>
+        </member>
+        <member name="T:Coddie.Data.ExecuteReaderOperator">
+            <summary>
+            Defines the <see cref="T:Coddie.Data.ExecuteReaderOperator"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.ExecuteReaderOperator.ExecuteReaderQuery(System.Data.IDbConnection,Coddie.Data.Objects.DbCommandDefinition,Coddie.Data.Objects.DbCommandParameter[]@,System.Data.IDbTransaction,System.Nullable{System.Data.CommandBehavior})">
+            <summary>
+            Executes query with parameters and returns DataReader object.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="commandDefinition">Command Definition.</param>
+            <param name="outputParameters"></param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <param name="commandBehavior">Db Command Behavior.</param>
+            <returns>Returns an IDataReader instance.</returns>
+        </member>
+        <member name="M:Coddie.Data.ExecuteReaderOperator.ExecuteReader(System.Data.IDbConnection,System.String,System.Object,System.Data.CommandType,System.Data.IDbTransaction,System.Nullable{System.Data.CommandBehavior})">
+            <summary>
+            Executes query with parameters and returns DataReader object.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="sql">Sql query.</param>
+            <param name="obj">object contains db parameters as property.</param>
+            <param name="commandType">(Optional) Command type.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <param name="commandBehavior">CommandBehaviour for DataReader.</param>
+            <returns>Returns an IDataReader instance.</returns>
+        </member>
+        <member name="M:Coddie.Data.ExecuteReaderOperator.ExecuteReaderAsync(System.Data.IDbConnection,System.String,System.Object,System.Data.CommandType,System.Data.IDbTransaction,System.Nullable{System.Data.CommandBehavior})">
+            <summary>
+            An IDbConnection extension method that executes the reader asynchronous operation.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="sql">Sql query.</param>
+            <param name="obj">object contains db parameters as property.</param>
+            <param name="commandType">(Optional) Command type.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <param name="commandBehavior">Db Command Behavior</param>
+            <returns>An asynchronous result that yields the execute reader.</returns>
+        </member>
+        <member name="T:Coddie.Data.ExecuteScalarOperator">
+            <summary>
+            Defines the <see cref="T:Coddie.Data.ExecuteScalarOperator"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.ExecuteScalarOperator.ExecuteScalar(System.Data.IDbConnection,System.String,System.Object,System.Data.CommandType,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            ExecuteScalar query with parameters and returns result object.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="sql">Sql query.</param>
+            <param name="obj">object contains db parameters as property.</param>
+            <param name="commandType">(Optional) Command type.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <param name="commandTimeout">Db Command timeout.</param>
+            <returns>Returns execute scalar result as object.</returns>
+        </member>
+        <member name="M:Coddie.Data.ExecuteScalarOperator.ExecuteScalarAs``1(System.Data.IDbConnection,System.String,System.Object,System.Data.CommandType,System.Data.IDbTransaction)">
+            <summary>
+            An IDbConnection extension method that executes the scalar as operation.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="connection">Database connection.</param>
+            <param name="sqlText">The SQL text.</param>
+            <param name="obj">object contains db parameters as property.</param>
+            <param name="commandType">(Optional) Command type.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <returns>Returns execute scalar result as T instance.</returns>
+        </member>
+        <member name="M:Coddie.Data.ExecuteScalarOperator.QueryExecuteScalar(System.Data.IDbConnection,System.String,System.Object,System.Data.CommandType,System.Data.IDbTransaction)">
+            <summary>
+            ExecuteScalar query with parameters and returns result object.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="sql">Sql query.</param>
+            <param name="obj">object contains db parameters as property.</param>
+            <param name="commandType">Command type.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <returns>Returns execute scalar result as object.</returns>
+        </member>
+        <member name="M:Coddie.Data.ExecuteScalarOperator.ExecuteScalarQuery(System.Data.IDbConnection,Coddie.Data.Objects.DbCommandDefinition,System.Data.IDbTransaction)">
+            <summary>
+            ExecuteScalar query with parameters and returns result object.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="commandDefinition">Command Definition.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <returns>Returns execute scalar result as object.</returns>
+        </member>
+        <member name="M:Coddie.Data.ExecuteScalarOperator.ExecuteScalarQueryAs``1(System.Data.IDbConnection,Coddie.Data.Objects.DbCommandDefinition,System.Data.IDbTransaction)">
+            <summary>
+            ExecuteScalar query with parameters and returns result object.
+            </summary>
+            <typeparam name="T">T class.</typeparam>
+            <param name="connection">Database connection.</param>
+            <param name="commandDefinition">Command Definition.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <returns>Returns execute scalar result as object instance.</returns>
+        </member>
+        <member name="M:Coddie.Data.ExecuteScalarOperator.ExecuteScalarOdbc(System.Data.IDbConnection,System.String,System.Object[],System.Data.CommandType,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            Execute Scalar the specified ODBC SQL query.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="odbcSqlQuery">The ODBC SQL query.</param>
+            <param name="parameterValues">Sql command parameters.</param>
+            <param name="commandType">Type of the command.</param>
+            <param name="transaction">Database transaction.</param>
+            <param name="commandTimeout">DbCommand timeout</param>
+            <returns>Returns execute scalar result as object.</returns>
+        </member>
+        <member name="M:Coddie.Data.ExecuteScalarOperator.ExecuteScalarOdbcAs``1(System.Data.IDbConnection,System.String,System.Object[],System.Data.CommandType,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            Execute Scalar the specified ODBC SQL query.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="odbcSqlQuery">The ODBC SQL query.</param>
+            <param name="parameterValues">Sql command parameters.</param>
+            <param name="commandType">Command type.</param>
+            <param name="transaction">Database transaction.</param>
+            <param name="commandTimeout">DbCommand timeout</param>
+            <returns>Returns execute scalar result as object instance.</returns>
+        </member>
+        <member name="M:Coddie.Data.ExecuteScalarOperator.ExecuteScalarAsAsync``1(System.Data.IDbConnection,System.String,System.Object,System.Data.CommandType,System.Data.IDbTransaction)">
+            <summary>
+            ExecuteScalar query with parameters and returns result object as async operation.
+            </summary>
+            <typeparam name="T">T struct.</typeparam>
+            <param name="connection">Database connection.</param>
+            <param name="sqlText">Sql query.</param>
+            <param name="obj">object contains db parameters as property.</param>
+            <param name="commandType">Command type.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <returns>Returns execute scalar result as object instance.</returns>
+        </member>
+        <member name="M:Coddie.Data.ExecuteScalarOperator.ExecuteScalarAsync(System.Data.IDbConnection,System.String,System.Object,System.Data.CommandType,System.Data.IDbTransaction)">
+            <summary>
+            An IDbConnection extension method that executes the scalar asynchronous operation.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="sql">Sql query.</param>
+            <param name="obj">object contains db parameters as property.</param>
+            <param name="commandType">(Optional) Command type.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <returns>An asynchronous result that yields the execute scalar.</returns>
+        </member>
+        <member name="T:Coddie.Data.FirstOperator">
+            <summary>
+            Defines the <see cref="T:Coddie.Data.FirstOperator"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.FirstOperator.QueryFirst``1(System.Data.IDbConnection,System.String,System.Object,System.Data.CommandType,System.Data.IDbTransaction,System.Nullable{System.Char})">
+            <summary>
+            Get First Row of the Resultset as object instance.
+            </summary>
+            <typeparam name="T">T class.</typeparam>
+            <param name="connection">Database connection.</param>
+            <param name="sqlText">Sql query.
+            if parameterNamePrefix is ? and Query: Select * From TableName Where Column1 = ?p1?
+            Then;
+            Query For Oracle ==> Select * From TableName Where Column1 = :p1
+            Query For Sql Server ==> Select * From TableName Where Column1 = @p1
+            if parameterNamePrefix is null and Query: Select * From TableName Where Column1 = :p1 (for PostgreSql)
+            no conversion occured.
+            </param>
+            <param name="obj">object contains db parameters as property.</param>
+            <param name="commandType">Command type.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <param name="parameterNamePrefix">Parameter Name Prefix for Rebuild Query</param>
+            <returns>Returns first record as object instance.</returns>
+        </member>
+        <member name="M:Coddie.Data.FirstOperator.QueryFirst``1(System.Data.IDbConnection,Coddie.Data.Objects.DbCommandDefinition,System.Data.IDbTransaction)">
+            <summary>
+            Get First Row of the Resultset as object instance.
+            </summary>
+            <typeparam name="T">T class.</typeparam>
+            <param name="connection">Database connection.</param>
+            <param name="commandDefinition">Command Definition.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <returns>Returns first record as dynamic object instance.</returns>
+        </member>
+        <member name="M:Coddie.Data.FirstOperator.GetFirst``1(System.Data.IDbConnection,System.String,System.Object[],System.Data.CommandType,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            Get First Row of the Odbc Sql Query Resultset as object instance.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="odbcSqlQuery">The ODBC SQL query ( Example: SELECT * FROM TABLE_NAME WHERE ID_COLUMN = ? ).</param>
+            <param name="parameterValues">Sql command parameter values.</param>
+            <param name="commandType">Type of the command.</param>
+            <param name="transaction">Database transaction.</param>
+            <param name="commandTimeout">DbCommand timeout</param>
+            <returns>Returns first record as object instance.</returns>
+        </member>
+        <member name="M:Coddie.Data.FirstOperator.QueryFirstDynamicAsync(System.Data.IDbConnection,System.String,System.Object,System.Data.CommandType,System.Data.IDbTransaction,System.Nullable{System.Char})">
+            <summary>
+            Get First Row of the Resultset as dynamic object instance with async operation.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="sqlText">Sql query.
+            if parameterNamePrefix is ? and Query: Select * From TableName Where Column1 = ?p1?
+            Then;
+            Query For Oracle ==> Select * From TableName Where Column1 = :p1
+            Query For Sql Server ==> Select * From TableName Where Column1 = @p1
+            if parameterNamePrefix is null and Query: Select * From TableName Where Column1 = :p1 (for PostgreSql)
+            no conversion occured.
+            </param>
+            <param name="obj">object contains db parameters as property.</param>
+            <param name="commandType">(Optional) Command type.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <param name="parameterNamePrefix">Parameter Name Prefix for Rebuild Query</param>
+            <returns>An asynchronous result that yields the first as dynamic.</returns>
+        </member>
+        <member name="M:Coddie.Data.FirstOperator.FirstAsync``1(System.Data.IDbConnection,System.String,System.Object,System.Data.CommandType,System.Data.IDbTransaction,System.Nullable{System.Char})">
+            <summary>
+            Get First Row of the Resultset as object instance with async operation.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="connection">Database connection.</param>
+            <param name="sqlText">Sql query.
+            if parameterNamePrefix is ? and Query: Select * From TableName Where Column1 = ?p1?
+            Then;
+            Query For Oracle ==> Select * From TableName Where Column1 = :p1
+            Query For Sql Server ==> Select * From TableName Where Column1 = @p1
+            if parameterNamePrefix is null and Query: Select * From TableName Where Column1 = :p1 (for PostgreSql)
+            no conversion occured.
+            </param>
+            <param name="obj">object contains db parameters as property.</param>
+            <param name="commandType">(Optional) Command type.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <param name="parameterNamePrefix">Parameter Name Prefix for Rebuild Query</param>
+            <returns>An asynchronous result that yields a T.</returns>
+        </member>
+        <member name="M:Coddie.Data.FirstOperator.QueryFirstAsDynamic(System.Data.IDbConnection,System.String,System.Object,System.Data.CommandType,System.Data.IDbTransaction,System.Nullable{System.Char})">
+            <summary>
+            Get First Row of the Resultset as dynamic object instance.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="sqlText">Sql query.
+            if parameterNamePrefix is ? and Query: Select * From TableName Where Column1 = ?p1?
+            Then;
+            Query For Oracle ==> Select * From TableName Where Column1 = :p1
+            Query For Sql Server ==> Select * From TableName Where Column1 = @p1
+            if parameterNamePrefix is null and Query: Select * From TableName Where Column1 = :p1 (for PostgreSql)
+            no conversion occured.
+            </param>
+            <param name="obj">object contains db parameters as property.</param>
+            <param name="commandType">Command type.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <param name="parameterNamePrefix">Parameter Name Prefix for Rebuild Query</param>
+            <returns>Returns first record as dynamic object.</returns>
+        </member>
+        <member name="M:Coddie.Data.FirstOperator.QueryFirstAsDynamic(System.Data.IDbConnection,Coddie.Data.Objects.DbCommandDefinition,System.Data.IDbTransaction)">
+            <summary>
+            Get First Row of the Resultset as dynamic object instance.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="commandDefinition">Command Definition <see cref="T:Coddie.Data.Objects.DbCommandDefinition"/>.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <returns>Returns first record as dynamic object instance.</returns>
+        </member>
+        <member name="T:Coddie.Data.LastOperator">
+            <summary>
+            Defines the <see cref="T:Coddie.Data.LastOperator"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.LastOperator.QueryLast``1(System.Data.IDbConnection,System.String,System.Object,System.Data.CommandType,System.Data.IDbTransaction,System.Nullable{System.Char})">
+            <summary>
+            Get Last Row of the Resultset as object instance.
+            </summary>
+            <typeparam name="T">T class.</typeparam>
+            <param name="connection">Database connection.</param>
+            <param name="sqlText">Sql query.
+            if parameterNamePrefix is ? and Query: Select * From TableName Where Column1 = ?p1?
+            Then;
+            Query For Oracle ==> Select * From TableName Where Column1 = :p1
+            Query For Sql Server ==> Select * From TableName Where Column1 = @p1
+            if parameterNamePrefix is null and Query: Select * From TableName Where Column1 = :p1 (for PostgreSql)
+            no conversion occured.
+            </param>
+            <param name="obj">object contains db parameters as property.</param>
+            <param name="commandType">Command type.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <param name="parameterNamePrefix">Parameter Name Prefix for Rebuild Query</param>
+            <returns>Returns last record as object instance.</returns>
+        </member>
+        <member name="M:Coddie.Data.LastOperator.QueryLast``1(System.Data.IDbConnection,Coddie.Data.Objects.DbCommandDefinition,System.Data.IDbTransaction)">
+            <summary>
+            Get Last Row of the Resultset as object instance.
+            </summary>
+            <typeparam name="T">T class.</typeparam>
+            <param name="connection">Database connection.</param>
+            <param name="commandDefinition">Command Definition.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <returns>Returns last record as object instance.</returns>
+        </member>
+        <member name="M:Coddie.Data.LastOperator.GetLast``1(System.Data.IDbConnection,System.String,System.Object[],System.Data.CommandType,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            Get Last Row of the Odbc Sql query Resultset as object instance.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="odbcSqlQuery">
+            The ODBC SQL query ( Example: SELECT * FROM TABLE_NAME WHERE ID_COLUMN = ? ).
+            </param>
+            <param name="parameterValues">Sql command parameter values.</param>
+            <param name="commandType">Type of the command.</param>
+            <param name="transaction">Database transaction.</param>
+            <param name="commandTimeout">DbCommand timeout</param>
+            <returns>Returns last record as object instance.</returns>
+        </member>
+        <member name="M:Coddie.Data.LastOperator.LastAsDynamicAsync(System.Data.IDbConnection,System.String,System.Object,System.Data.CommandType,System.Data.IDbTransaction,System.Char)">
+            <summary>
+            Get Last Row of the Resultset as dynamic object instance with async operation.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="sqlText">Sql query.
+            Select * From TableName Where Column1 = ?p1?
+            parameterNamePrefix : ?
+            Query For Oracle ==> Select * From TableName Where Column1 = :p1
+            Query For Sql Server ==> Select * From TableName Where Column1 = @p1
+            </param>
+            <param name="obj">object contains db parameters as property.</param>
+            <param name="commandType">(Optional) Command type.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <param name="parameterNamePrefix">Parameter Name Prefix for Rebuild Query</param>
+            <returns>An asynchronous result that yields the last as dynamic.</returns>
+        </member>
+        <member name="M:Coddie.Data.LastOperator.LastAsync``1(System.Data.IDbConnection,System.String,System.Object,System.Data.CommandType,System.Data.IDbTransaction,System.Char)">
+            <summary>
+            Get Last Row of the Resultset as object instance with async operation.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="connection">Database connection.</param>
+            <param name="sqlText">Sql query.
+            Select * From TableName Where Column1 = ?p1?
+            parameterNamePrefix : ?
+            Query For Oracle ==> Select * From TableName Where Column1 = :p1
+            Query For Sql Server ==> Select * From TableName Where Column1 = @p1
+            </param>
+            <param name="obj">object contains db parameters as property.</param>
+            <param name="commandType">(Optional) Command type.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <param name="parameterNamePrefix">Parameter Name Prefix for Rebuild Query</param>
+            <returns>An asynchronous result that yields a T.</returns>
+        </member>
+        <member name="M:Coddie.Data.LastOperator.QueryLastDynamic(System.Data.IDbConnection,System.String,System.Object,System.Data.CommandType,System.Data.IDbTransaction,System.Nullable{System.Char})">
+            <summary>
+            Get Last Row of the Resultset as dynamic object instance.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="sqlText">Sql query.
+            if parameterNamePrefix is ? and Query: Select * From TableName Where Column1 = ?p1?
+            Then;
+            Query For Oracle ==> Select * From TableName Where Column1 = :p1
+            Query For Sql Server ==> Select * From TableName Where Column1 = @p1
+            if parameterNamePrefix is null and Query: Select * From TableName Where Column1 = :p1 (for PostgreSql)
+            no conversion occured.
+            </param>
+            <param name="obj">object contains db parameters as property.</param>
+            <param name="commandType">Command type.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <param name="parameterNamePrefix">Parameter Name Prefix for Rebuild Query</param>
+            <returns>Returns last record as dynamic object instance.</returns>
+        </member>
+        <member name="M:Coddie.Data.LastOperator.QueryLastAsDynamic(System.Data.IDbConnection,Coddie.Data.Objects.DbCommandDefinition,System.Data.IDbTransaction)">
+            <summary>
+            Get Last Row of the Resultset as dynamic object instance.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="commandDefinition">Command Definition.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <returns>Returns last record as dynamic object instance.</returns>
+        </member>
+        <member name="T:Coddie.Data.ListOperator">
+            <summary>
+            Defines the <see cref="T:Coddie.Data.ListOperator"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.ListOperator.GetList``1(System.Data.IDbConnection,System.String,System.Object[],System.Data.CommandType,System.Data.IDbTransaction,System.Nullable{System.Int32},Coddie.Data.Interfaces.IPageInfo)">
+            <summary>
+            Get List the specified ODBC SQL query with skip and take.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="odbcSqlQuery">The ODBC SQL query.</param>
+            <param name="parameterValues">Db Command parameter values.</param>
+            <param name="commandType">Type of the command.</param>
+            <param name="transaction">Database transaction.</param>
+            <param name="commandTimeout">DbCommand timeout</param>
+            <param name="pageInfo">page info for skip and take counts. it is optional. 
+            if it is null then paging will be disabled.</param>
+            <returns>Returns as object list.</returns>
+        </member>
+        <member name="M:Coddie.Data.ListOperator.QueryListAsync``1(System.Data.IDbConnection,System.String,System.Object,System.Data.CommandType,System.Data.IDbTransaction,Coddie.Data.Interfaces.IPageInfo,System.Char)">
+            <summary>
+            Gets Resultset of query as object instance list with async operation.
+            </summary>
+            <typeparam name="T">T class.</typeparam>
+            <param name="connection">Database connection.</param>
+            <param name="sqlText">Sql query.
+            Select * From TableName Where Column1 = ?p1?
+            parameterNamePrefix : ?
+            Query For Oracle ==> Select * From TableName Where Column1 = :p1
+            Query For Sql Server ==> Select * From TableName Where Column1 = @p1
+            </param>
+            <param name="obj">object contains db parameters as property.</param>
+            <param name="commandType">Command type.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <param name="pageInfo">page info for skip and take counts.</param>
+            <param name="parameterNamePrefix">Parameter Name Prefix for Rebuild Query</param>
+            <returns>Returns as object list.</returns>
+        </member>
+        <member name="T:Coddie.Data.PagedListOperator">
+            <summary>
+            Defines the <see cref="T:Coddie.Data.PagedListOperator"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.PagedListOperator.QueryList``1(System.Data.IDbConnection,System.String,System.Object,System.Data.CommandType,System.Data.IDbTransaction,Coddie.Data.Interfaces.IPageInfo,System.Nullable{System.Char})">
+            <summary>
+            Gets query resultset as object list with paging option.
+            </summary>
+            <typeparam name="T">T class.</typeparam>
+            <param name="connection">Database connection.</param>
+            <param name="sqlText">Sql query.
+            if parameterNamePrefix is ? and Query: Select * From TableName Where Column1 = ?p1?
+            Then;
+            Query For Oracle ==> Select * From TableName Where Column1 = :p1
+            Query For Sql Server ==> Select * From TableName Where Column1 = @p1
+            if parameterNamePrefix is null and Query: Select * From TableName Where Column1 = :p1 (for PostgreSql)
+            no conversion occured.
+            </param>
+            <param name="obj">object which has contains parameters as properties.</param>
+            <param name="commandType">Command type.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <param name="pageInfo">page info for skip and take counts.</param>
+            <param name="parameterNamePrefix">Parameter Name Prefix for Rebuild Query</param>
+            <returns>Returns as object list.</returns>
+        </member>
+        <member name="M:Coddie.Data.PagedListOperator.GetList``1(System.Data.IDbConnection,Coddie.Data.Objects.DbCommandDefinition,System.Data.IDbTransaction,Coddie.Data.Interfaces.IPageInfo)">
+            <summary>
+            Gets query resultset as object list with paging option.
+            </summary>
+            <typeparam name="T">T class.</typeparam>
+            <param name="connection">Database connection.</param>
+            <param name="commandDefinition">Command Definition.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <param name="pageInfo">page info for skip and take counts.</param>
+            <returns>Returns as object list.</returns>
+        </member>
+        <member name="M:Coddie.Data.PagedListOperator.SelectList``1(System.Data.IDbConnection,System.String,System.Object[],Coddie.Data.Interfaces.IPageInfo,System.Data.CommandType,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            Get List the specified ODBC SQL query with paging option.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="odbcSqlQuery">The ODBC SQL query.</param>
+            <param name="values">The parameters.</param>
+            <param name="pageInfo">page info for skip and take counts.</param>
+            <param name="commandType">Type of the command.</param>
+            <param name="transaction">Database transaction.</param>
+            <param name="commandTimeout">DbCommand timeout</param>
+            <returns>Returns as object list.</returns>
+        </member>
+        <member name="T:Coddie.Data.ResultSetOperator">
+            <summary>
+            Defines the <see cref="T:Coddie.Data.ResultSetOperator"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.ResultSetOperator.GetResultSetQuery(System.Data.IDbConnection,Coddie.Data.Objects.DbCommandDefinition,System.Data.IDbTransaction)">
+            <summary>
+            Get Resultset of the Command definition.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="commandDefinition">Command Definition.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <returns>Returns result set in a dataset instance.</returns>
+        </member>
+        <member name="M:Coddie.Data.ResultSetOperator.GetOdbcResultSet(System.Data.IDbConnection,System.String,System.Object[],System.Data.CommandType,System.Data.IDbTransaction)">
+            <summary>
+            Get Resultset of the specified ODBC SQL query.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="odbcSqlQuery">The ODBC SQL query.</param>
+            <param name="parameterValues">Sql command parameters.</param>
+            <param name="commandType">Type of the command.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <returns>Returns result set in a dataset instance.</returns>
+        </member>
+        <member name="T:Coddie.Data.DbConnectionTypeBuilder">
+            <summary>
+            Defines the <see cref="T:Coddie.Data.DbConnectionTypeBuilder"/>.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.DbConnectionTypeBuilder.connectionTypePairs">
+            <summary>
+            Defines the connectionTypePairs.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.DbConnectionTypeBuilder.odbcConnectionTypes">
+            <summary>
+            Gets Odbc Connection Types.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.DbConnectionTypeBuilder.oledbConnectionTypes">
+            <summary>
+            Gets Oledb Connection Types.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.DbConnectionTypeBuilder.oracleConnectionTypes">
+            <summary>
+            Gets Oracle Connection Types.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.DbConnectionTypeBuilder.scalarInsertConnectionTypes">
+            <summary>
+            Gets ConnectionTypes for Scalar Insert op.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.DbConnectionTypeBuilder.GetDbConnectionType(System.Data.IDbConnection)">
+            <summary>
+            Gets Connection Type.
+            </summary>
+            <param name="connection">Connection instance.</param>
+            <returns>returns DbConnectionTypes enum.</returns>
+        </member>
+        <member name="M:Coddie.Data.DbConnectionTypeBuilder.GetConnectionType(System.Data.IDbConnection)">
+            <summary>
+            The GetConnectionType.
+            </summary>
+            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <returns>The <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</returns>
+        </member>
+        <member name="M:Coddie.Data.DbConnectionTypeBuilder.GetDbConnectionType``1(``0)">
+            <summary>
+            Gets Connection Type.
+            </summary>
+            <typeparam name="T">DbConnection class.</typeparam>
+            <param name="connection">Connection instance.</param>
+            <returns>returns DbConnectionTypes enum.</returns>
+        </member>
+        <member name="M:Coddie.Data.DbConnectionTypeBuilder.IsInsertScalarMode(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Checks Connection Type is in Insert Scalar Mode.
+            </summary>
+            <param name="connectionType">Connection tType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+            <returns>The <see cref="T:System.Boolean"/>.</returns>
+        </member>
+        <member name="M:Coddie.Data.DbConnectionTypeBuilder.IsOdbcConn(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Checks DbConnection is Odbc connection type.
+            </summary>
+            <param name="connectionType">
+            The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/> Db Connectype enum instance.
+            </param>
+            <returns>
+            The <see cref="T:System.Boolean"/> if connnection type is one of these (Odbc, DB2Odbc, FirebirdOdbc,
+            MySqlOdbc, OracleOdbc, PostgreSqlOdbc, SqlBaseOdbc, SqlOdbc, SynergyOdbc, NuoDb) returns
+            true else returns false.
+            </returns>
+        </member>
+        <member name="M:Coddie.Data.DbConnectionTypeBuilder.IsOledbConn(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Checks DbConnection is Oledb connection type.
+            </summary>
+            <param name="connectionType">
+            The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/> Db Connectype enum instance.
+            </param>
+            <returns>
+            The <see cref="T:System.Boolean"/> if connnection type is one of these (Oledb, DB2Oledb,
+            FirebirdOledb, MySqlOledb, OracleOledb, PostgreSqlOledb, SqlBaseOledb, SqlOledb,
+            SynergyOledb) returns true else returns false.
+            </returns>
+        </member>
+        <member name="M:Coddie.Data.DbConnectionTypeBuilder.IsOracleConnection(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Checks Connection type is Oracle.
+            </summary>
+            <param name="connectionType">
+            The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/> Db Connectype enum instance.
+            </param>
+            <returns>
+            The <see cref="T:System.Boolean"/> if connnection type is one of these (Oracle, OracleOdbc,
+            OracleOledb) returns true else returns false.
+            </returns>
+        </member>
+        <member name="M:Coddie.Data.DbConnectionTypeBuilder.GetFullTableName``1(Coddie.Data.Enums.DbConnectionTypes,System.Boolean)">
+            <summary>
+            Gets Table Name with Schema includes connection type prefix-suffix.
+            </summary>
+            <typeparam name="T">T class.</typeparam>
+            <param name="connectionType">
+            The connectionType <see cref="T:Coddie.Data.Enums.DbConnectionTypes"/> Db Connectype enum instance.
+            </param>
+            <param name="includeSchemaName">if true reuslt includes schema info else does not include.</param>
+            <returns>Returns Table Name with Schema includes connection type prefix-suffix.</returns>
+        </member>
+        <member name="T:Coddie.Data.DbQueryTranslator">
+            <summary>
+            Defines the <see cref="T:Coddie.Data.DbQueryTranslator"/>.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.DbQueryTranslator.empty">
+            <summary>
+            Defines the empty.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.DbQueryTranslator.TranslateOdbcQuery(System.Data.IDbConnection,System.String)">
+            <summary>
+            The Translate Odbc Query to parametrized query.
+            </summary>
+            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="odbcSqlQuery">The query <see cref="T:System.String"/>.</param>
+            <returns>
+            The <see cref="!:string[]"/> Returns translated query and parameters in same array. First
+            element of array is translated query and other elements are query parameters. Query :
+            "SELECT T1.* FROM TABLE1 T1 WHERE T1.ID_COLUMN = ?" For Sql Server Result; "SELECT T1.*
+            FROM TABLE1 T1 WHERE T1.ID_COLUMN = @p0", "@p0" For Oracle Result; "SELECT T1.* FROM
+            TABLE1 T1 WHERE T1.ID_COLUMN = :p0", ":p0" .
+            </returns>
+        </member>
+        <member name="M:Coddie.Data.DbQueryTranslator.TranslateOdbcQuery(Coddie.Data.Enums.DbConnectionTypes,System.String)">
+            <summary>
+            The Translate Odbc Query to parametrized query.
+            </summary>
+            <param name="connectionType">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="odbcSqlQuery">The query <see cref="T:System.String"/>.</param>
+            <returns>
+            The <see cref="!:string[]"/> Returns translated query and parameters in same array. First
+            element of array is translated query and other elements are query parameters. Query :
+            "SELECT T1.* FROM TABLE1 T1 WHERE T1.ID_COLUMN = ?" For Sql Server Result; "SELECT T1.*
+            FROM TABLE1 T1 WHERE T1.ID_COLUMN = @p0", "@p0" For Oracle Result; "SELECT T1.* FROM
+            TABLE1 T1 WHERE T1.ID_COLUMN = :p0", ":p0" .
+            </returns>
+        </member>
+        <member name="M:Coddie.Data.DbQueryTranslator.BuildCommandDefinitionForTranslate(System.Data.IDbConnection,System.String,Coddie.Data.Objects.DbCommandParameter[],System.Nullable{System.Data.CommandType},System.Nullable{System.Int32},System.Boolean)">
+            <summary>
+            Builds DbCommandDefinition instance for Translate of Odbc Sql Query.
+            </summary>
+            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="odbcSqlQuery">The query <see cref="T:System.String"/>.</param>
+            <param name="commandParameters">The commandParameters <see cref="!:DbCommandParameter[]"/>.</param>
+            <param name="cmdType">The cmdType <see cref="T:System.Nullable`1"/>.</param>
+            <param name="commandTimeout">DbCommand timeout</param>
+            <param name="setOverratedParamsToOutput"></param>
+            <returns>Returns Command Definition object instance <see cref="T:Coddie.Data.Objects.DbCommandDefinition"/>.</returns>
+        </member>
+        <member name="M:Coddie.Data.DbQueryTranslator.BuildDbCommandForTranslate(System.Data.IDbConnection,System.String,System.Object[],System.Data.CommandType,System.Boolean,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            Builds DbCommand instance for Translate of Odbc Sql Query.
+            </summary>
+            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="odbcSqlQuery">Sql query <see cref="T:System.String"/>.</param>
+            <param name="parameterValues">Database command parameters <see cref="!:DbCommandParameter[]"/>.</param>
+            <param name="commandType">Command Type.</param>
+            <param name="setOverratedParametersToOutput"></param>
+            <param name="transaction">Database transaction.</param>
+            <param name="commandTimeout">DbCommand timeout</param>
+            <returns>Returns DbCommand object instance <see cref="T:System.Data.Common.DbCommand"/>.</returns>
+        </member>
+        <member name="M:Coddie.Data.DbQueryTranslator.TranslateParametersFromObject(System.Data.IDbConnection,System.Object)">
+            <summary>
+            Gets parameters from object.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="obj">object contains db parameters as property.</param>
+            <returns>Returns DbCommandParameter instance array.</returns>
+        </member>
+        <member name="T:Coddie.Data.SingleOperator">
+            <summary>
+            Defines the <see cref="T:Coddie.Data.SingleOperator"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.SingleOperator.QuerySingle``1(System.Data.IDbConnection,System.String,System.Object,System.Data.CommandType,System.Data.IDbTransaction,System.Nullable{System.Char})">
+            <summary>
+            Get Single Row of the Resultset as object instance.
+            </summary>
+            <typeparam name="T">T class.</typeparam>
+            <param name="connection">Database connection.</param>
+            <param name="sqlText">Sql query.
+            if parameterNamePrefix is ? and Query: Select * From TableName Where Column1 = ?p1?
+            Then;
+            Query For Oracle ==> Select * From TableName Where Column1 = :p1
+            Query For Sql Server ==> Select * From TableName Where Column1 = @p1
+            if parameterNamePrefix is null and Query: Select * From TableName Where Column1 = :p1 (for PostgreSql)
+            no conversion occured.
+            </param>
+            <param name="obj">object contains db parameters as property.</param>
+            <param name="commandType">Command type.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <param name="parameterNamePrefix">Parameter Name Prefix for Rebuild Query</param>
+            <returns>Returns single record as object instance.</returns>
+        </member>
+        <member name="M:Coddie.Data.SingleOperator.QuerySingle``1(System.Data.IDbConnection,Coddie.Data.Objects.DbCommandDefinition,System.Data.IDbTransaction)">
+            <summary>
+            Get Single Row of the Resultset as object instance.
+            </summary>
+            <typeparam name="T">T class.</typeparam>
+            <param name="connection">Database connection.</param>
+            <param name="commandDefinition">Command Definition.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <returns>Returns single record as dynamic object instance.</returns>
+        </member>
+        <member name="M:Coddie.Data.SingleOperator.GetSingle``1(System.Data.IDbConnection,System.String,System.Object[],System.Data.CommandType,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+            <summary>
+            Get Single Row of the Odbc Sql Query Resultset as object instance.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="odbcSqlQuery">The ODBC SQL query ( Example: SELECT * FROM TABLE_NAME WHERE ID_COLUMN = ? ).</param>
+            <param name="parameterValues">Sql command parameter values.</param>
+            <param name="commandType">Type of the command.</param>
+            <param name="transaction">Database transaction.</param>
+            <param name="commandTimeout">DbCommand timeout</param>
+            <returns>Returns single record as object instance.</returns>
+        </member>
+        <member name="M:Coddie.Data.SingleOperator.QuerySingleDynamicAsync(System.Data.IDbConnection,System.String,System.Object,System.Data.CommandType,System.Data.IDbTransaction,System.Char)">
+            <summary>
+            Get Single Row of the Resultset as dynamic object instance with async operation.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="sqlText">Sql query.
+            Select * From TableName Where Column1 = ?p1?
+            parameterNamePrefix : ?
+            Query For Oracle ==> Select * From TableName Where Column1 = :p1
+            Query For Sql Server ==> Select * From TableName Where Column1 = @p1
+            </param>
+            <param name="obj">object contains db parameters as property.</param>
+            <param name="commandType">(Optional) Command type.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <param name="parameterNamePrefix">Parameter Name Prefix for Rebuild Query</param>
+            <returns>An asynchronous result that yields the single as dynamic.</returns>
+        </member>
+        <member name="M:Coddie.Data.SingleOperator.SingleAsync``1(System.Data.IDbConnection,System.String,System.Object,System.Data.CommandType,System.Data.IDbTransaction,System.Char)">
+            <summary>
+            Get Single Row of the Resultset as object instance with async operation.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="connection">Database connection.</param>
+            <param name="sqlText">Sql query.
+            Select * From TableName Where Column1 = ?p1?
+            parameterNamePrefix : ?
+            Query For Oracle ==> Select * From TableName Where Column1 = :p1
+            Query For Sql Server ==> Select * From TableName Where Column1 = @p1
+            </param>
+            <param name="obj">object contains db parameters as property.</param>
+            <param name="commandType">(Optional) Command type.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <param name="parameterNamePrefix">Parameter Name Prefix for Rebuild Query</param>
+            <returns>An asynchronous result that yields a T.</returns>
+        </member>
+        <member name="M:Coddie.Data.SingleOperator.QuerySingleAsDynamic(System.Data.IDbConnection,System.String,System.Object,System.Data.CommandType,System.Data.IDbTransaction,System.Nullable{System.Char})">
+            <summary>
+            Get Single Row of the Resultset as dynamic object instance.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="sqlText">Sql query.
+            if parameterNamePrefix is ? and Query: Select * From TableName Where Column1 = ?p1?
+            Then;
+            Query For Oracle ==> Select * From TableName Where Column1 = :p1
+            Query For Sql Server ==> Select * From TableName Where Column1 = @p1
+            if parameterNamePrefix is null and Query: Select * From TableName Where Column1 = :p1 (for PostgreSql)
+            no conversion occured.
+            </param>
+            <param name="obj">object contains db parameters as property.</param>
+            <param name="commandType">Command type.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <param name="parameterNamePrefix">Parameter Name Prefix for Rebuild Query</param>
+            <returns>Returns single record as dynamic object.</returns>
+        </member>
+        <member name="M:Coddie.Data.SingleOperator.QuerySingleAsDynamic(System.Data.IDbConnection,Coddie.Data.Objects.DbCommandDefinition,System.Data.IDbTransaction)">
+            <summary>
+            Get Single Row of the Resultset as dynamic object instance.
+            </summary>
+            <param name="connection">Database connection.</param>
+            <param name="commandDefinition">Command Definition <see cref="T:Coddie.Data.Objects.DbCommandDefinition"/>.</param>
+            <param name="transaction">(Optional) Database transaction.</param>
+            <returns>Returns single record as dynamic object instance.</returns>
+        </member>
+        <member name="T:Coddie.Data.Constants.DbConnectionNames">
+            <summary>
+            Defines the <see cref="T:Coddie.Data.Constants.DbConnectionNames" />.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.DbConnectionNames.OleDb">
+            <summary>
+            Defines the OleDb.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.DbConnectionNames.Odbc">
+            <summary>
+            Defines the Odbc.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.DbConnectionNames.MySql">
+            <summary>
+            Defines the MySql.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.DbConnectionNames.MySqlDevart">
+            <summary>
+            Defines the MySqlDevart.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.DbConnectionNames.SQLite">
+            <summary>
+            Defines the SQLite.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.DbConnectionNames.Devart_SQLite">
+            <summary>
+            Defines the Devart_SQLite.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.DbConnectionNames.Firebird">
+            <summary>
+            Defines the Firebird.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.DbConnectionNames.Devart_Oracle">
+            <summary>
+            Defines the Devart_Oracle.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.DbConnectionNames.Oracle">
+            <summary>
+            Defines the Oracle.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.DbConnectionNames.OracleManaged">
+            <summary>
+            Defines the OracleManaged.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.DbConnectionNames.Oracle_Win">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.DbConnectionNames.PostgreSql">
+            <summary>
+            Defines the PostgreSql.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.DbConnectionNames.PostgreSqlDevart">
+            <summary>
+            Defines the PostgreSqlDevart.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.DbConnectionNames.VistaDB">
+            <summary>
+            Defines the VistaDB.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.DbConnectionNames.Sql">
+            <summary>
+            Defines the MsSql.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.DbConnectionNames.SqlBaseGupta">
+            <summary>
+            Defines the SqlBaseGupta.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.DbConnectionNames.SqlBaseUnify">
+            <summary>
+            Defines the SqlBaseUnify.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.DbConnectionNames.SqlBase">
+            <summary>
+            Defines the SqlBase.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.DbConnectionNames.SqlCe">
+            <summary>
+            Defines the SqlCe.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.DbConnectionNames.Sde">
+            <summary>
+            Defines the Sde.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.DbConnectionNames.DB2">
+            <summary>
+            Defines the DB2.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.DbConnectionNames.NuoDb">
+            <summary>
+            Defines the NuoDb.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.DbConnectionNames.SQLDatabaseNet">
+            <summary>
+            Defines the SQLDatabaseNet.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.DbConnectionNames.Ole_MySql">
+            <summary>
+            Defines the Ole_MySql.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.DbConnectionNames.Ole_DB2">
+            <summary>
+            Defines the Ole_DB2.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.DbConnectionNames.Ole_Ora">
+            <summary>
+            Defines the Ole_Ora.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.DbConnectionNames.Ole_Oracle">
+            <summary>
+            Defines the Ole_Oracle.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.DbConnectionNames.Ole_SQL">
+            <summary>
+            Defines the Ole_SQL.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.DbConnectionNames.Ole_Driver">
+            <summary>
+            Defines the Ole_Driver.
+            </summary>
+        </member>
+        <member name="T:Coddie.Data.Constants.InternalAppValues">
+            <summary>
+            Defines the <see cref="T:Coddie.Data.Constants.InternalAppValues" />.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.InternalAppValues.NullValue">
+            <summary>
+            Defines the NullValue.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.InternalAppValues.ErrorFileDateFormat">
+            <summary>
+            Time Format: yyyy-MM-dd-HH-mm-ss.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.InternalAppValues.GeneralDateFormat">
+            <summary>
+            Time Format: yyyy-MM-dd, HH:mm:ss ffffff.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.InternalAppValues.ConnectionName">
+            <summary>
+            Defines the connectionName ==> "Connection";.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.InternalAppValues.ServerVersion">
+            <summary>
+            Defines the serverVersion ==> "ServerVersion".
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.InternalAppValues.AtChar">
+            <summary>
+            Defines the atChar ==> '@'.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.InternalAppValues.QuestionMark">
+            <summary>
+            Defines the questionChar ==> '?'.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.InternalAppValues.ColonChar">
+            <summary>
+            Defines the colonChar ==> ':'.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.InternalAppValues.ParameterChar">
+            <summary>
+            Defines the ParameterChar.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.InternalAppValues.OpeningSquareBracket">
+            <summary>
+            Defines the OpeningSquareBracket ==> '['.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.InternalAppValues.ClosingSquareBracket">
+            <summary>
+            Defines the ClosingSquareBracket ==> ']'.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.InternalAppValues.QuoteChar">
+            <summary>
+            Defines the QuoteChar ==> '"'.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.InternalAppValues.Backquote">
+            <summary>
+            Defines the Backquote ==> '`'.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.InternalAppValues.Empty">
+            <summary>
+            Defines the Emtpy string.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.InternalAppValues.CountFormat">
+            <summary>
+            Defines sql count format ==> SELECT COUNT(1) AS CNT FROM ( {0} )
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.InternalAppValues.SqlScriptFormat">
+            <summary>
+            Defines the CommandTextSqlScriptFormaty ==> "#SQL_SCRIPT#".
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.InternalAppValues.SkipFormat">
+            <summary>
+            Defines the CommandTextSqlScriptFormaty ==> "#SKIP#".
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.InternalAppValues.TakeFormat">
+            <summary>
+            Defines the CommandTextSqlScriptFormaty ==> "#TAKE#".
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.InternalAppValues.ParameterQueryDelimiter">
+            <summary>
+            char '|'.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.InternalAppValues.ParameterPropertyDelimiter">
+            <summary>
+            char ';'.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.InternalAppValues.OracleCommandBindByNameProperty">
+            <summary>
+            "BindByName".
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.InternalAppValues.OracleStringConcatOperator">
+            <summary>
+            Oracle String Concat Operator ==> " || "
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.InternalAppValues.MsSqlStringConcatOperator">
+            <summary>
+            Ms Sql String Concat Operator ==> " + "
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.InternalAppValues.OneSpace">
+            <summary>
+            Defines " " string.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.InternalAppValues.BackquoteString">
+            <summary>
+            Defines the Backquote as String ==> '`'.
+            </summary>
+        </member>
+        <member name="T:Coddie.Data.Constants.DbAppMessages">
+            <summary>
+            Defines the <see cref="T:Coddie.Data.Constants.DbAppMessages" />.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.DbAppMessages.UndefinedDbConnectionType">
+            <summary>
+            Defines the UndefinedDbConnectionType.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Constants.DbAppMessages.UndefinedKey">
+            <summary>
+            Defines the UndefinedKey.
+            </summary>
+        </member>
+        <member name="T:Coddie.Data.DataExtensions">
+            <summary>
+            Defines the <see cref="T:Coddie.Data.DataExtensions" />.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.DataExtensions.ToList``1(System.Data.DataTable,System.Boolean)">
+            <summary>
+            convert datatable To List.
+            </summary>
+            <typeparam name="T">    T object type.</typeparam>
+            <param name="datatable">Datatable object.</param>
+            <param name="accordingToColumn">The accordingToColumn<see cref="T:System.Boolean"/>.</param>
+            <returns>   Returns A List of T object.</returns>
+        </member>
+        <member name="M:Coddie.Data.DataExtensions.GetPageOfDataTable(System.Data.DataTable,System.Int32,System.Int32)">
+            <summary>
+            Gets Page Of DataTable.
+            </summary>
+            <param name="dt">           DataTable object.</param>
+            <param name="pageNumber">   The page number.</param>
+            <param name="rowCount">     Number of rows.</param>
+            <returns>   The page of data table.</returns>
+        </member>
+        <member name="M:Coddie.Data.DataExtensions.GetColumnsOfDataTable(System.Data.DataTable,System.String[])">
+            <summary>
+            Gets Columns Of DataTable.
+            </summary>
+            <param name="dt">           DataTable object.</param>
+            <param name="columnList">   column names array.</param>
+            <returns>   Returns a DataTable with Selected column names.</returns>
+        </member>
+        <member name="M:Coddie.Data.DataExtensions.GetColumnsOfDataTable(System.Data.DataTable,System.Int32[])">
+            <summary>
+            Gets Columns Of DataTable.
+            </summary>
+            <param name="dt">           DataTable object.</param>
+            <param name="columnList">   column numbers array.</param>
+            <returns>   Returns a DataTable with Selected column numbers.</returns>
+        </member>
+        <member name="M:Coddie.Data.DataExtensions.GetObjectWithSelectedColumn(System.Data.DataTable,System.String,System.Object,System.String)">
+            <summary>
+            Gets Object With Selected Column.
+            </summary>
+            <param name="dt">                   DataTable object.</param>
+            <param name="refColumn">            Name of Reference Column.</param>
+            <param name="refValue">             Value of Reference Column.</param>
+            <param name="destinationColumn">    Name of Destination Column.</param>
+            <returns>The <see cref="T:System.Object"/>.</returns>
+        </member>
+        <member name="M:Coddie.Data.DataExtensions.ExportAsExcelWithIncludeColumns(System.Data.DataTable,System.String,System.Object[])">
+            <summary>
+            A DataTable extension method that export as excel with ınclude columns.
+            </summary>
+            <param name="dt">               DataTable object.</param>
+            <param name="fileName">         Filename of the file.</param>
+            <param name="includeColumns">   A variable-length parameters list containing include columns.</param>
+        </member>
+        <member name="M:Coddie.Data.DataExtensions.ExportAsExcelWithExcludeColumns(System.Data.DataTable,System.String,System.Object[])">
+            <summary>
+            A DataTable extension method that export as excel with exclude columns.
+            </summary>
+            <param name="dt">               DataTable object.</param>
+            <param name="fileName">         Filename of the file.</param>
+            <param name="excludeColumns">   A variable-length parameters list containing exclude columns.</param>
+        </member>
+        <member name="M:Coddie.Data.DataExtensions.Copy(System.Data.DataTable)">
+            <summary>
+            Copies datatable to a new datatble.
+            </summary>
+            <param name="dt">   DataTable object.</param>
+            <returns>   A DataTable.</returns>
+        </member>
+        <member name="M:Coddie.Data.DataExtensions.GetSomeColumnsAsTable(System.Data.DataTable,System.String[])">
+            <summary>
+            Get Some Columns As DataTable.
+            </summary>
+            <param name="dt">           DataTable object.</param>
+            <param name="columnList">   column names array.</param>
+            <returns>   some columns as table.</returns>
+        </member>
+        <member name="M:Coddie.Data.DataExtensions.RowToObject``1(System.Data.DataRow,System.Data.DataColumnCollection)">
+            <summary>
+            convert datarow to T object instance.
+            </summary>
+            <typeparam name="T">    Generic type parameter.</typeparam>
+            <param name="row">      The row to act on.</param>
+            <param name="columns">  (Optional) The columns.</param>
+            <returns>   A T instance.</returns>
+        </member>
+        <member name="M:Coddie.Data.DataExtensions.GetColumnAsUniqueList``1(System.Data.DataTable,System.String)">
+            <summary>
+            Gets Column As Unique List.
+            </summary>
+            <typeparam name="T">    Generic type parameter.</typeparam>
+            <param name="dataTable">    The dataTable to act on.</param>
+            <param name="columnName">   Name of the column.</param>
+            <returns>   The column as unique list.</returns>
+        </member>
+        <member name="M:Coddie.Data.DataExtensions.ToDynamicList(System.Data.DataTable)">
+            <summary>
+            convert datatable to expandoobject list.
+            </summary>
+            <param name="table">    The table to act on.</param>
+            <returns>   Table as a List{dynamic}; .</returns>
+        </member>
+        <member name="T:Coddie.Data.DataReaderAsyncOperator">
+            <summary>
+            Defines the <see cref="T:Coddie.Data.DataReaderAsyncOperator" />.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.DataReaderAsyncOperator.FirstDynamicRowAsync(System.Data.IDataReader)">
+            <summary>
+            Gets First Row Async.
+            </summary>
+            <param name="reader">   The dataReader to act on.</param>
+            <returns>   An asynchronous result that yields the first row.</returns>
+        </member>
+        <member name="M:Coddie.Data.DataReaderAsyncOperator.LastDynamicRowAsync(System.Data.IDataReader)">
+            <summary>
+            Gets Last Row Async.
+            </summary>
+            <param name="reader">   The dataReader to act on.</param>
+            <returns>   An asynchronous result that yields the last row.</returns>
+        </member>
+        <member name="M:Coddie.Data.DataReaderAsyncOperator.GetDynamicListAsync(System.Data.IDataReader,System.Boolean)">
+            <summary> GetDynamicResultSetAsync
+            Gets Dynamic ResultSet Async.
+            </summary>
+            <param name="reader">       .</param>
+            <param name="closeAtFinal"> (Optional) .</param>
+            <returns>Returns dynamic object list.</returns>
+        </member>
+        <member name="M:Coddie.Data.DataReaderAsyncOperator.GetMultiDynamicListAsync(System.Data.IDataReader)">
+            <summary> GetMultiDynamicResultSetAsync
+            An IDataReader extension method that gets multi dynamic result set asynchronous.
+            </summary>
+            <param name="reader">IDataReader object.</param>
+            <returns>   An asynchronous result that yields the multi dynamic result set.</returns>
+        </member>
+        <member name="T:Coddie.Data.DataReaderOperator">
+            <summary>
+            Defines the <see cref="T:Coddie.Data.DataReaderOperator"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.DataReaderOperator.FirstDynamicRow(System.Data.IDataReader,System.Boolean)">
+            <summary>
+            Returns First Row as dynamic object.
+            </summary>
+            <param name="reader">The dataReader to act on.</param>
+            <param name="closeAtFinal">(Optional) .</param>
+            <returns>An dynamic object.</returns>
+        </member>
+        <member name="M:Coddie.Data.DataReaderOperator.LastDynamicRow(System.Data.IDataReader,System.Boolean)">
+            <summary>
+            Returns Last Row as dynamic object.
+            </summary>
+            <param name="reader">The dataReader to act on.</param>
+            <param name="closeAtFinal">(Optional) .</param>
+            <returns>An dynamic object.</returns>
+        </member>
+        <member name="M:Coddie.Data.DataReaderOperator.GetResultSetAsDynamic(System.Data.IDataReader,System.Boolean)">
+            <summary>
+            GetDynamicResultSet Gets ResultSet as dynamic object list.
+            </summary>
+            <param name="reader">.</param>
+            <param name="closeAtFinal">(Optional) .</param>
+            <returns>Returns dynamic object list.</returns>
+        </member>
+        <member name="M:Coddie.Data.DataReaderOperator.GetResultSetWithPagingAsDynamic(System.Data.IDataReader,System.UInt32,System.UInt32,System.Boolean)">
+            <summary>
+            GetDynamicResultSetWithPaging Gets IDataReader ResultSet as dynamic Object list with paging.
+            </summary>
+            <param name="reader">.</param>
+            <param name="pageNumber">(Optional) The page number.</param>
+            <param name="pageItemCount">(Optional) Number of page ıtems.</param>
+            <param name="closeAtFinal">(Optional) .</param>
+            <returns>The dynamic result set with paging.</returns>
+        </member>
+        <member name="M:Coddie.Data.DataReaderOperator.GetMultiDynamicList(System.Data.IDataReader,System.Boolean)">
+            <summary>
+            GetMultiDynamicResultSet The GetMultiDynamicResultSet.
+            </summary>
+            <param name="reader">.</param>
+            <param name="closeAtFinal">(Optional) .</param>
+            <returns>The multi dynamic result set.</returns>
+        </member>
+        <member name="M:Coddie.Data.DataReaderOperator.GetDynamicRow(System.Data.IDataReader)">
+            <summary>
+            Gets IDataReader record as dynamic.
+            </summary>
+            <param name="dataReader">The dataReader to act on.</param>
+            <returns>The dynamic object from data reader.</returns>
+        </member>
+        <member name="M:Coddie.Data.DataReaderOperator.GetDynamicReaderListSkipAndTake(System.Data.IDataReader,System.UInt32,System.UInt32,System.Boolean)">
+            <summary>
+            GetDynamicResultSetSkipAndTake Get dynamic object List with skip and take options.
+            </summary>
+            <param name="reader">Data reader object instance.</param>
+            <param name="skip">Count for Skip.</param>
+            <param name="take">Count for Take.</param>
+            <param name="closeAtFinal">if true datareader will be closed at final else not.</param>
+            <returns>Returns dynamic object list.</returns>
+        </member>
+        <member name="M:Coddie.Data.DataReaderOperator.CloseIfNot(System.Data.IDataReader)">
+            <summary>
+            Closes IDataReader object if it is not closed.
+            </summary>
+            <param name="reader">The dataReader to act on.</param>
+        </member>
+        <member name="M:Coddie.Data.DataReaderOperator.Any(System.Data.IDataReader,System.Boolean)">
+            <summary>
+            Checks Data Reader has any rows.
+            </summary>
+            <param name="reader"></param>
+            <param name="closeAtFinal"></param>
+            <returns>Returns true Datat reader has rows, else returns false.</returns>
+        </member>
+        <member name="M:Coddie.Data.DataReaderOperator.GetDataReaderMetadata(System.Data.IDataReader)">
+            <summary>
+            Returns DataReader metadata as dictionary.
+            </summary>
+            <param name="dataReader">Datareader instance.</param>
+            <returns>Returns Dictionary{string, Type} object instance. </returns>
+        </member>
+        <member name="M:Coddie.Data.DataReaderOperator.SingleDynamicRow(System.Data.IDataReader)">
+            <summary>
+            Returns First Row as dynamic object.
+            </summary>
+            <param name="reader">The dataReader to act on.</param>
+            <returns>An dynamic object.</returns>
+        </member>
+        <member name="T:Coddie.Data.DbCommandExtensions.CommandExtensions">
+            <summary>
+            Defines the <see cref="T:Coddie.Data.DbCommandExtensions.CommandExtensions"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.DbCommandExtensions.CommandExtensions.SetCommandTransaction(System.Data.IDbCommand,System.Data.IDbTransaction)">
+            <summary>
+            The Sets Transaction of IDbCommand instance.
+            </summary>
+            <param name="command">IDbCommand instance <see cref="T:System.Data.IDbCommand"/>.</param>
+            <param name="transaction">IDbTransaction instance <see cref="T:System.Data.IDbTransaction"/>.</param>
+        </member>
+        <member name="M:Coddie.Data.DbCommandExtensions.CommandExtensions.SetParameterValue(System.Data.IDbCommand,System.Int32,System.Object)">
+            <summary>
+            The Sets Value of Parameter with given parmeter index and value.
+            </summary>
+            <param name="command">IDbCommand instance<see cref="T:System.Data.IDbCommand"/>.</param>
+            <param name="parameterIndex">Index of parameter <see cref="T:System.Int32"/>.</param>
+            <param name="parameterValue">Value of parameter <see cref="T:System.Object"/>.</param>
+            <exception cref="T:System.NullReferenceException">throws IDbCommand instance is null.</exception>
+            <exception cref="T:System.IndexOutOfRangeException">throws parameter index less than zero or greater than parameter length.</exception>
+        </member>
+        <member name="M:Coddie.Data.DbCommandExtensions.CommandExtensions.SetParameterValue(System.Data.IDbCommand,System.String,System.Object)">
+            <summary>
+            Set Value Parameter with given name and value.
+            </summary>
+            <param name="command">The command <see cref="T:System.Data.IDbCommand"/>.</param>
+            <param name="parameterName">The parameterName <see cref="T:System.String"/>.</param>
+            <param name="parameterValue">The parameterValue <see cref="T:System.Object"/>.</param>
+            <exception cref="T:System.NullReferenceException">throws IDbCommand instance is null or parameter not exist with given name.</exception>
+        </member>
+        <member name="M:Coddie.Data.DbCommandExtensions.CommandExtensions.SetCommandConnection(System.Data.IDbCommand,System.Data.IDbConnection)">
+            <summary>
+            Set Command Connection.
+            </summary>
+            <param name="command">The command <see cref="T:System.Data.IDbCommand"/>.</param>
+            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
+        </member>
+        <member name="M:Coddie.Data.DbCommandExtensions.CommandExtensions.SetCommandValuesToNull(System.Data.IDbCommand)">
+            <summary>
+            Sets Command values to DbNull.Value.
+            </summary>
+            <param name="command">The command <see cref="T:System.Data.IDbCommand"/>.</param>
+        </member>
+        <member name="M:Coddie.Data.DbCommandExtensions.CommandExtensions.AddCommandParameters(System.Data.IDbCommand,System.Collections.Generic.List{Coddie.Data.Objects.DbCommandParameter})">
+            <summary>
+            Adds Command Parameters.
+            </summary>
+            <param name="command">The command <see cref="T:System.Data.IDbCommand"/>.</param>
+            <param name="commandParameters">Command Definition parameters<see cref="T:System.Collections.Generic.List`1"/>.</param>
+        </member>
+        <member name="M:Coddie.Data.DbCommandExtensions.CommandExtensions.AddCommandParameters(System.Data.IDbCommand,System.Object[])">
+            <summary>
+            Adds Command Parameters.
+            </summary>
+            <param name="command">Db command.</param>
+            <param name="parameters">Db Command Parameters.</param>
+        </member>
+        <member name="M:Coddie.Data.DbCommandExtensions.CommandExtensions.GetOutParameters(System.Data.IDbCommand)">
+            <summary>
+            Gets Output Parameters Of Command.
+            </summary>
+            <param name="command">Db command instance<see cref="T:System.Data.IDbCommand"/>.</param>
+            <returns>Db command parameters<see cref="!:DbCommandParameter[]"/>.</returns>
+        </member>
+        <member name="M:Coddie.Data.DbCommandExtensions.CommandExtensions.CreateDbParameter(System.Data.IDbCommand,System.String,System.Object,System.Nullable{System.Data.DbType},System.Data.ParameterDirection)">
+            <summary>
+            Creates the database command parameter.
+            </summary>
+            <param name="command">Database command.</param>
+            <param name="parameterName">Name of the parameter.</param>
+            <param name="value">The value.</param>
+            <param name="dbType">Parameter Db Type.</param>
+            <param name="direction">Parameter direction.</param>
+            <returns>Returns DbParameterinstance.</returns>
+            <exception cref="T:System.ArgumentNullException">command</exception>
+        </member>
+        <member name="M:Coddie.Data.DbCommandExtensions.CommandExtensions.SetOracleCommandBindByName(System.Data.IDbCommand,System.Boolean)">
+            <summary>
+            Set OracleCommand BindByName with given value.
+            </summary>
+            <param name="dbCommand">Db command</param>
+            <param name="bindByName">BindByName property value.</param>
+        </member>
+        <member name="M:Coddie.Data.DbCommandExtensions.CommandExtensions.RegenerateDbParameter(System.Data.IDbCommand,Coddie.Data.Objects.DbCommandParameter,System.String)">
+            <summary>
+            Creates DbDataParameter with given DbCommandParameter instance and parameterPrefix.
+            </summary>
+            <param name="command">IDbCommand instance.</param>
+            <param name="parameter">DbCommandParameter instance</param>
+            <param name="parameterPrefix">Parameter prefix.</param>
+            <returns>Returns IDbDataParameter object instance.</returns>
+        </member>
+        <member name="M:Coddie.Data.DbCommandExtensions.CommandExtensions.ExecuteDataReader(System.Data.IDbCommand,System.Nullable{System.Data.CommandBehavior})">
+            <summary>
+            Executes command and returns IDataReader object instance.
+            </summary>
+            <param name="command">database command</param>
+            <param name="behavior">database command behavior</param>
+            <returns>Returns IDataReader object instance.</returns>
+        </member>
+        <member name="T:Coddie.Data.DbTransactionExtensions.TransactionExtensions">
+            <summary>
+            Defines the <see cref="T:Coddie.Data.DbTransactionExtensions.TransactionExtensions" />.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.DbTransactionExtensions.TransactionExtensions.DisposeTransaction(System.Data.IDbTransaction)">
+            <summary>
+            Disposes Transaction.
+            </summary>
+            <param name="transaction">IDbTransaction instance<see cref="T:System.Data.IDbTransaction"/>.</param>
+        </member>
+        <member name="M:Coddie.Data.DbTransactionExtensions.TransactionExtensions.CommitAndDispose(System.Data.IDbTransaction)">
+            <summary>
+            Commit And Dispose.
+            </summary>
+            <param name="transaction">IDbTransaction instance<see cref="T:System.Data.IDbTransaction"/>.</param>
+        </member>
+        <member name="M:Coddie.Data.DbTransactionExtensions.TransactionExtensions.RollbackAndDispose(System.Data.IDbTransaction)">
+            <summary>
+            Rollback And Dispose.
+            </summary>
+            <param name="transaction">IDbTransaction instance<see cref="T:System.Data.IDbTransaction"/>.</param>
+        </member>
+        <member name="T:Coddie.Data.Enums.DbConnectionTypes">
+             <summary>   Values that represent Database connection types. </summary>
+            
+             <remarks>   Mustafa SAÇLI, 4.05.2019. </remarks>
+        </member>
+        <member name="F:Coddie.Data.Enums.DbConnectionTypes.None">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:Coddie.Data.Enums.DbConnectionTypes.MsSql">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:Coddie.Data.Enums.DbConnectionTypes.Oracle">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:Coddie.Data.Enums.DbConnectionTypes.PostgreSql">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:Coddie.Data.Enums.DbConnectionTypes.DB2">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:Coddie.Data.Enums.DbConnectionTypes.Odbc">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:Coddie.Data.Enums.DbConnectionTypes.Oledb">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:Coddie.Data.Enums.DbConnectionTypes.MySql">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:Coddie.Data.Enums.DbConnectionTypes.SqlCE">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:Coddie.Data.Enums.DbConnectionTypes.Firebird">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:Coddie.Data.Enums.DbConnectionTypes.SQLite">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:Coddie.Data.Enums.DbConnectionTypes.VistaDB">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:Coddie.Data.Enums.DbConnectionTypes.SqlBase">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:Coddie.Data.Enums.DbConnectionTypes.Synergy">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:Coddie.Data.Enums.DbConnectionTypes.SqlOdbc">
+            <summary>   An enum constant representing the MsSql odbc option. </summary>
+        </member>
+        <member name="F:Coddie.Data.Enums.DbConnectionTypes.SqlOledb">
+            <summary>   An enum constant representing the MsSql oledb option. </summary>
+        </member>
+        <member name="F:Coddie.Data.Enums.DbConnectionTypes.OracleOdbc">
+            <summary>   An enum constant representing the Oracle odbc option. </summary>
+        </member>
+        <member name="F:Coddie.Data.Enums.DbConnectionTypes.OracleOledb">
+            <summary>   An enum constant representing the Oracle oledb option. </summary>
+        </member>
+        <member name="F:Coddie.Data.Enums.DbConnectionTypes.PostgreSqlOdbc">
+            <summary>   An enum constant representing the PostgreSql odbc option. </summary>
+        </member>
+        <member name="F:Coddie.Data.Enums.DbConnectionTypes.PostgreSqlOledb">
+            <summary>   An enum constant representing the PostgreSql oledb option. </summary>
+        </member>
+        <member name="F:Coddie.Data.Enums.DbConnectionTypes.DB2Odbc">
+            <summary>   An enum constant representing the DB2 odbc option. </summary>
+        </member>
+        <member name="F:Coddie.Data.Enums.DbConnectionTypes.DB2Oledb">
+            <summary>   An enum constant representing the DB2 oledb option. </summary>
+        </member>
+        <member name="F:Coddie.Data.Enums.DbConnectionTypes.MySqlOdbc">
+            <summary>   An enum constant representing the MySql odbc option. </summary>
+        </member>
+        <member name="F:Coddie.Data.Enums.DbConnectionTypes.MySqlOledb">
+            <summary>   An enum constant representing the MySql oledb option. </summary>
+        </member>
+        <member name="F:Coddie.Data.Enums.DbConnectionTypes.FirebirdOdbc">
+            <summary>   An enum constant representing the Firebird odbc option. </summary>
+        </member>
+        <member name="F:Coddie.Data.Enums.DbConnectionTypes.FirebirdOledb">
+            <summary>   An enum constant representing the Firebird oledb option. </summary>
+        </member>
+        <member name="F:Coddie.Data.Enums.DbConnectionTypes.SqlBaseOdbc">
+            <summary>   An enum constant representing the SQL base odbc option. </summary>
+        </member>
+        <member name="F:Coddie.Data.Enums.DbConnectionTypes.SqlBaseOledb">
+            <summary>   An enum constant representing the SQL base oledb option. </summary>
+        </member>
+        <member name="F:Coddie.Data.Enums.DbConnectionTypes.SynergyOdbc">
+            <summary>   An enum constant representing the synergy ODBC option. </summary>
+        </member>
+        <member name="F:Coddie.Data.Enums.DbConnectionTypes.SynergyOledb">
+            <summary>   An enum constant representing the synergy oledb option. </summary>
+        </member>
+        <member name="F:Coddie.Data.Enums.DbConnectionTypes.NuoDb">
+            <summary>
+             An enum constant representing the nuo db= 130 option. http://www.nuodb.com/
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Enums.DbConnectionTypes.SqlDatabase">
+            <summary>
+             An enum constant representing the SQL database= 131 option. SQLDATABASE.NET,
+             http://sqldatabase.net/
+            </summary>
+        </member>
+        <member name="T:Coddie.Data.Interfaces.IDbCommandResult`1">
+            <summary>
+            Object contains Result and Output parameter values.
+            </summary>
+            <typeparam name="T">T class.</typeparam>
+        </member>
+        <member name="P:Coddie.Data.Interfaces.IDbCommandResult`1.AdditionalValues">
+            <summary>
+            Gets or sets the AdditionalValues
+            Parameters for Additional values.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.Interfaces.IDbCommandResult`1.OutputParameters">
+            <summary>
+            Gets or sets the OutputParameters.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.Interfaces.IDbCommandResult`1.Result">
+            <summary>
+            Gets or sets the Result
+            Result value.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.Interfaces.IDbCommandResult`1.ExecutionResult">
+            <summary>
+            Execution Result.
+            </summary>
+        </member>
+        <member name="T:Coddie.Data.Interfaces.IPageInfo">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Coddie.Data.Interfaces.IPageInfo.Skip">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Coddie.Data.Interfaces.IPageInfo.Take">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Coddie.Data.Interfaces.IPageInfo.IsPageable">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.Interfaces.IPageInfo.SetSkip(System.UInt32)">
+            <summary>
+            
+            </summary>
+            <param name="skip">item count for skipping.</param>
+            <returns>Returns object instance</returns>
+        </member>
+        <member name="M:Coddie.Data.Interfaces.IPageInfo.SetTake(System.UInt32)">
+            <summary>
+            
+            </summary>
+            <param name="take">item count for take.</param>
+            <returns>Returns object instance</returns>
+        </member>
+        <member name="T:Coddie.Data.Interfaces.IQuerySetting">
+            <summary>
+            Represents Parameter Prefix, Column-Table Prefix And Suffix, Last Record Sql Part, Skip and take part.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.Interfaces.IQuerySetting.ParameterPrefix">
+            <summary>
+            Gets Parameter Name Prefix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.Interfaces.IQuerySetting.Prefix">
+            <summary>
+            Gets Table and Column Name Prefix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.Interfaces.IQuerySetting.Suffix">
+            <summary>
+            Gets Table and Column Name Suffix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.Interfaces.IQuerySetting.StringConcatOperation">
+            <summary>
+            Gets the string concat operation.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.Interfaces.IQuerySetting.SkipAndTakeFormat">
+            <summary>
+            Gets the Skip and take format.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.Interfaces.IQuerySetting.LastFormat">
+            <summary>
+            Last Record Sql Format
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.Interfaces.IQuerySetting.ConnectionType">
+            <summary>
+            Gets Db Connection Type.
+            </summary>
+        </member>
+        <member name="T:Coddie.Data.Objects.DbCommandDefinition">
+            <summary>
+            Command Definition.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.Objects.DbCommandDefinition.#ctor">
+            <summary>
+            Creates new DbCommandDefinition instance.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.Objects.DbCommandDefinition.#ctor(System.String,System.Nullable{System.Data.CommandType},System.Boolean,System.Nullable{System.Int32},System.Collections.Generic.List{Coddie.Data.Objects.DbCommandParameter},System.Object[])">
+            <summary>
+            Creates new DbCommandDefinition instance.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.Objects.DbCommandDefinition.CommandText">
+            <summary>
+            Gets or sets the CommandText.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.Objects.DbCommandDefinition.CommandType">
+            <summary>
+            Gets or sets the CommandType.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.Objects.DbCommandDefinition.CommandTimeout">
+            <summary>
+            Gets or sets the CommandTimeout
+            Command Timeout.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Objects.DbCommandDefinition.parameters">
+            <summary>
+            Defines the parameters.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.Objects.DbCommandDefinition.Parameters">
+            <summary>
+            Gets or sets the Parameters
+            Command Parameters.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.Objects.DbCommandDefinition.AddParameter(Coddie.Data.Objects.DbCommandParameter)">
+            <summary>
+            Adds command parameter to list.
+            </summary>
+            <param name="dbCommandParameter"></param>
+        </member>
+        <member name="M:Coddie.Data.Objects.DbCommandDefinition.AddParameters(System.Collections.Generic.IEnumerable{Coddie.Data.Objects.DbCommandParameter})">
+            <summary>
+            Adds command parameter to list.
+            </summary>
+            <param name="dbCommandParameters">Command Parameters</param>
+        </member>
+        <member name="F:Coddie.Data.Objects.DbCommandDefinition.dbParameters">
+            <summary>
+            Defines the _dbParams.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.Objects.DbCommandDefinition.DbParameters">
+            <summary>
+            Gets or sets the DbParameters.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.Objects.DbCommandDefinition.OracleCommandBindByName">
+            <summary>
+            Gets Sets OracleCommand BindByName value.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.Objects.DbCommandDefinition.IsJdbc">
+            <summary>
+            Gets, sets command text is jdbc query. if it is true command definition will be recompile
+            as query, else not.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.Objects.DbCommandDefinition.AutoOpen">
+            <summary>
+            Auto Opens DbConnection before db operations.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.Objects.DbCommandDefinition.CloseAtFinal">
+            <summary>
+            Closes Connection after db operation.
+            </summary>
+        </member>
+        <member name="T:Coddie.Data.Objects.DbCommandParameter">
+            <summary>
+            Defines the <see cref="T:Coddie.Data.Objects.DbCommandParameter"/>.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.Objects.DbCommandParameter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Data.Objects.DbCommandParameter"/> class.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.Objects.DbCommandParameter.#ctor(System.Object,System.Nullable{System.Data.DbType},System.Data.ParameterDirection)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Data.Objects.DbCommandParameter"/> class.
+            </summary>
+            <param name="value">The value <see cref="T:System.Object"/>.</param>
+            <param name="dbType">.</param>
+            <param name="direction">.</param>
+        </member>
+        <member name="P:Coddie.Data.Objects.DbCommandParameter.ParameterName">
+            <summary>
+            Gets or sets the ParameterName Parameter Name.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.Objects.DbCommandParameter.ParameterColumnName">
+            <summary>
+            Gets or sets the ParameterColumnName Parameter Column Name.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.Objects.DbCommandParameter.Value">
+            <summary>
+            Gets or sets the Value Parameter value..
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.Objects.DbCommandParameter.Direction">
+            <summary>
+            Gets or sets the Direction Parameter Direction..
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.Objects.DbCommandParameter.DbType">
+            <summary>
+            Gets or sets the DbType Db Type of Parameter...
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.Objects.DbCommandParameter.Precision">
+            <summary>
+            Gets or sets the Precision Precision of Parameter..
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.Objects.DbCommandParameter.Scale">
+            <summary>
+            Gets or sets the Scale Scale of Parameter..
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.Objects.DbCommandParameter.Size">
+            <summary>
+            Gets or sets the Size Size of Parameter..
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.Objects.DbCommandParameter.IsNullable">
+            <summary>
+            Gets or sets a value indicating whether IsNullable.
+            </summary>
+        </member>
+        <member name="T:Coddie.Data.Objects.DbCommandResult`1">
+            <summary>
+            Defines the <see cref="T:Coddie.Data.Objects.DbCommandResult`1"/>.
+            </summary>
+            <typeparam name="T">.</typeparam>
+        </member>
+        <member name="M:Coddie.Data.Objects.DbCommandResult`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Data.Objects.DbCommandResult`1"/> class.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.Objects.DbCommandResult`1.#ctor(`0)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Data.Objects.DbCommandResult`1"/> class.
+            </summary>
+            <param name="t">The t <see cref="!:T"/>.</param>
+        </member>
+        <member name="P:Coddie.Data.Objects.DbCommandResult`1.AdditionalValues">
+            <summary>
+            Gets or sets the OutputValues Parameters for Output values.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.Objects.DbCommandResult`1.OutputParameters">
+            <summary>
+            Gets or sets the OutputParameters.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.Objects.DbCommandResult`1.Result">
+            <summary>
+            Gets or sets the Result value.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.Objects.DbCommandResult`1.ExecutionResult">
+            <summary>
+            Execution Result.
+            </summary>
+        </member>
+        <member name="T:Coddie.Data.Objects.PageInfo">
+            <summary>
+            Page Info for GETTİNG dB rECORDS.
+            </summary>
+        </member>
+        <member name="F:Coddie.Data.Objects.PageInfo.DefaultInstance">
+            <summary>
+            Default instance for IPageInfo.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.Objects.PageInfo.#ctor">
+            <summary>
+            Default instance
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.Objects.PageInfo.#ctor(System.UInt32,System.UInt32)">
+            <summary>
+            Get IPage instance from skip and take.
+            </summary>
+            <param name="skip">item count for skipping.</param>
+            <param name="take">item length in a page</param>
+        </member>
+        <member name="M:Coddie.Data.Objects.PageInfo.GetPageWithPageNumber(System.UInt32,System.UInt32)">
+            <summary>
+            Get IPage instance from page number and item length.
+            </summary>
+            <param name="pageNumber">page number</param>
+            <param name="pageItemLength">item length in a page</param>
+            <returns>Returns IPage instance from page number and item length.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">if page number is less than 1 throw this error.</exception>
+        </member>
+        <member name="M:Coddie.Data.Objects.PageInfo.GetPage(System.UInt32,System.UInt32)">
+            <summary>
+            Get IPage instance from skip and take.
+            </summary>
+            <param name="skip">item count for skipping.</param>
+            <param name="take">item count for take.</param>
+            <returns>Returns IPage instance from skip and take.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">if page number is less than 1 throw this error.</exception>
+        </member>
+        <member name="P:Coddie.Data.Objects.PageInfo.Skip">
+            <summary>
+            Gets, sets item count for skipping.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.Objects.PageInfo.Take">
+            <summary>
+            Gets, sets item length in a page.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.Objects.PageInfo.IsPageable">
+            <summary>
+            Gets Page info is pageable.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.Objects.PageInfo.SetSkip(System.UInt32)">
+            <summary>
+            
+            </summary>
+            <param name="skip">item count for skipping.</param>
+            <returns>Returns object instance</returns>
+        </member>
+        <member name="M:Coddie.Data.Objects.PageInfo.SetTake(System.UInt32)">
+            <summary>
+            
+            </summary>
+            <param name="take">item count for take.</param>
+            <returns>Returns object instance</returns>
+        </member>
+        <member name="T:Coddie.Data.DB2QuerySettings">
+            <summary>
+            Represents Parameter Prefix, Column-Table Prefix And Suffix and last IdentityInsert Part.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.DB2QuerySettings.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Data.DB2QuerySettings"/> class.
+            </summary>
+            <param name="connectionType">Database Connection type.</param>
+        </member>
+        <member name="P:Coddie.Data.DB2QuerySettings.ParameterPrefix">
+            <summary>
+            Gets Parameter Name Prefix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.DB2QuerySettings.Prefix">
+            <summary>
+            Gets Table and Column Name Prefix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.DB2QuerySettings.Suffix">
+            <summary>
+            Gets Table and Column Name Suffix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.DB2QuerySettings.StringConcatOperation">
+            <summary>
+            Gets the string concat operation.
+            </summary>
+            <value>
+            The string concat operation.
+            </value>
+        </member>
+        <member name="P:Coddie.Data.DB2QuerySettings.SkipAndTakeFormat">
+            <summary>
+            Gets the Skip and take format.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.DB2QuerySettings.LastFormat">
+            <summary>
+            Last Record Sql Format
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.DB2QuerySettings.ConnectionType">
+            <summary>
+            Gets Db Connection Type.
+            </summary>
+        </member>
+        <member name="T:Coddie.Data.QuerySettings.QuerySettingsFactory">
+            <summary>
+            Defines the <see cref="T:Coddie.Data.QuerySettings.QuerySettingsFactory" />.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.QuerySettings.QuerySettingsFactory.GetQuerySetting(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Gets Query Option of DbConnectionType.
+            </summary>
+            <param name="connectionType">The connType<see cref="T:Coddie.Data.Enums.DbConnectionTypes"/>.</param>
+            <returns>The <see cref="T:Coddie.Data.Interfaces.IQuerySetting"/>.</returns>
+        </member>
+        <member name="T:Coddie.Data.FirebirdQuerySetting">
+            <summary>
+            Represents Parameter Prefix, Column-Table Prefix And Suffix and last IdentityInsert Part.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.FirebirdQuerySetting.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Data.FirebirdQuerySetting"/> class.
+            </summary>
+            <param name="connectionType">Database Connection type.</param>
+        </member>
+        <member name="P:Coddie.Data.FirebirdQuerySetting.ParameterPrefix">
+            <summary>
+            Gets Parameter Name Prefix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.FirebirdQuerySetting.Prefix">
+            <summary>
+            Gets Table and Column Name Prefix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.FirebirdQuerySetting.Suffix">
+            <summary>
+            Gets Table and Column Name Suffix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.FirebirdQuerySetting.StringConcatOperation">
+            <summary>
+            Gets the string concat operation.
+            </summary>
+            <value>
+            The string concat operation.
+            </value>
+        </member>
+        <member name="P:Coddie.Data.FirebirdQuerySetting.SkipAndTakeFormat">
+            <summary>
+            Gets the Skip and take format.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.FirebirdQuerySetting.LastFormat">
+            <summary>
+            Last Record Sql Format
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.FirebirdQuerySetting.ConnectionType">
+            <summary>
+            Gets Db Connection Type.
+            </summary>
+        </member>
+        <member name="T:Coddie.Data.MsSqlQuerySetting">
+            <summary>
+            Represents Parameter Prefix, Column-Table Prefix And Suffix and last IdentityInsert Part.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.MsSqlQuerySetting.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Data.MsSqlQuerySetting"/> class.
+            </summary>
+            <param name="connectionType">Database Connection type.</param>
+        </member>
+        <member name="P:Coddie.Data.MsSqlQuerySetting.ParameterPrefix">
+            <summary>
+            Gets Parameter Name Prefix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.MsSqlQuerySetting.Prefix">
+            <summary>
+            Gets Table and Column Name Prefix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.MsSqlQuerySetting.Suffix">
+            <summary>
+            Gets Table and Column Name Suffix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.MsSqlQuerySetting.StringConcatOperation">
+            <summary>
+            Gets the string concat operation.
+            </summary>
+            <value>The string concat operation.</value>
+        </member>
+        <member name="P:Coddie.Data.MsSqlQuerySetting.SkipAndTakeFormat">
+            <summary>
+            Gets the Skip and take format.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.MsSqlQuerySetting.LastFormat">
+            <summary>
+            Last Record Sql Format
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.MsSqlQuerySetting.ConnectionType">
+            <summary>
+            Gets Db Connection Type.
+            </summary>
+        </member>
+        <member name="T:Coddie.Data.MySqlQuerySetting">
+            <summary>
+            Represents Parameter Prefix, Column-Table Prefix And Suffix and last IdentityInsert Part.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.MySqlQuerySetting.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Data.MySqlQuerySetting"/> class.
+            </summary>
+            <param name="connectionType">Database Connection type.</param>
+        </member>
+        <member name="P:Coddie.Data.MySqlQuerySetting.ParameterPrefix">
+            <summary>
+            Gets Parameter Name Prefix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.MySqlQuerySetting.Prefix">
+            <summary>
+            Gets Table and Column Name Prefix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.MySqlQuerySetting.Suffix">
+            <summary>
+            Gets Table and Column Name Suffix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.MySqlQuerySetting.StringConcatOperation">
+            <summary>
+            Gets the string concat operation.
+            </summary>
+            <value>The string concat operation.</value>
+        </member>
+        <member name="P:Coddie.Data.MySqlQuerySetting.SkipAndTakeFormat">
+            <summary>
+            Gets the Skip and take format.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.MySqlQuerySetting.LastFormat">
+            <summary>
+            Last Record Sql Format
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.MySqlQuerySetting.ConnectionType">
+            <summary>
+            Gets Db Connection Type.
+            </summary>
+        </member>
+        <member name="T:Coddie.Data.NuodbQuerySetting">
+            <summary>
+            Represents Parameter Prefix, Column-Table Prefix And Suffix and last IdentityInsert Part.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.NuodbQuerySetting.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Data.NuodbQuerySetting"/> class.
+            </summary>
+            <param name="connectionType">Database Connection type.</param>
+        </member>
+        <member name="P:Coddie.Data.NuodbQuerySetting.ParameterPrefix">
+            <summary>
+            Gets Parameter Name Prefix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.NuodbQuerySetting.Prefix">
+            <summary>
+            Gets Table and Column Name Prefix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.NuodbQuerySetting.Suffix">
+            <summary>
+            Gets Table and Column Name Suffix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.NuodbQuerySetting.StringConcatOperation">
+            <summary>
+            Gets the string concat operation.
+            </summary>
+            <value>The string concat operation.</value>
+        </member>
+        <member name="P:Coddie.Data.NuodbQuerySetting.SkipAndTakeFormat">
+            <summary>
+            Gets the Skip and take format.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.NuodbQuerySetting.LastFormat">
+            <summary>
+            Last Record Sql Format
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.NuodbQuerySetting.ConnectionType">
+            <summary>
+            Gets Db Connection Type.
+            </summary>
+        </member>
+        <member name="T:Coddie.Data.OdbcQuerySetting">
+            <summary>
+            Represents Parameter Prefix, Column-Table Prefix And Suffix and last IdentityInsert Part.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.OdbcQuerySetting.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Data.OdbcQuerySetting"/> class.
+            </summary>
+            <param name="connectionType">Database Connection type.</param>
+        </member>
+        <member name="P:Coddie.Data.OdbcQuerySetting.ParameterPrefix">
+            <summary>
+            Gets Parameter Name Prefix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.OdbcQuerySetting.Prefix">
+            <summary>
+            Gets Table and Column Name Prefix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.OdbcQuerySetting.Suffix">
+            <summary>
+            Gets Table and Column Name Suffix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.OdbcQuerySetting.StringConcatOperation">
+            <summary>
+            Gets the string concat operation.
+            </summary>
+            <value>The string concat operation.</value>
+        </member>
+        <member name="P:Coddie.Data.OdbcQuerySetting.SkipAndTakeFormat">
+            <summary>
+            Gets the Skip and take format.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.OdbcQuerySetting.LastFormat">
+            <summary>
+            Last Record Sql Format
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.OdbcQuerySetting.ConnectionType">
+            <summary>
+            Gets Db Connection Type.
+            </summary>
+        </member>
+        <member name="T:Coddie.Data.OledbQuerySetting">
+            <summary>
+            Represents Parameter Prefix, Column-Table Prefix And Suffix and last IdentityInsert Part.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.OledbQuerySetting.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Data.OledbQuerySetting"/> class.
+            </summary>
+            <param name="connectionType">Database Connection type.</param>
+        </member>
+        <member name="P:Coddie.Data.OledbQuerySetting.ParameterPrefix">
+            <summary>
+            Gets Parameter Name Prefix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.OledbQuerySetting.Prefix">
+            <summary>
+            Gets Table and Column Name Prefix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.OledbQuerySetting.Suffix">
+            <summary>
+            Gets Table and Column Name Suffix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.OledbQuerySetting.StringConcatOperation">
+            <summary>
+            Gets the string concat operation.
+            </summary>
+            <value>The string concat operation.</value>
+        </member>
+        <member name="P:Coddie.Data.OledbQuerySetting.SkipAndTakeFormat">
+            <summary>
+            Gets the Skip and take format.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.OledbQuerySetting.LastFormat">
+            <summary>
+            Last Record Sql Format
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.OledbQuerySetting.ConnectionType">
+            <summary>
+            Gets Db Connection Type.
+            </summary>
+        </member>
+        <member name="T:Coddie.Data.OracleQuerySetting">
+            <summary>
+            Represents Parameter Prefix, Column-Table Prefix And Suffix and last IdentityInsert Part.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.OracleQuerySetting.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Data.OracleQuerySetting"/> class.
+            </summary>
+            <param name="connectionType">Database Connection type.</param>
+        </member>
+        <member name="P:Coddie.Data.OracleQuerySetting.ParameterPrefix">
+            <summary>
+            Gets Parameter Name Prefix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.OracleQuerySetting.Prefix">
+            <summary>
+            Gets Table and Column Name Prefix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.OracleQuerySetting.Suffix">
+            <summary>
+            Gets Table and Column Name Suffix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.OracleQuerySetting.StringConcatOperation">
+            <summary>
+            Gets the string concat operation.
+            </summary>
+            <value>The string concat operation.</value>
+        </member>
+        <member name="P:Coddie.Data.OracleQuerySetting.SkipAndTakeFormat">
+            <summary>
+            Gets the Skip and take format.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.OracleQuerySetting.LastFormat">
+            <summary>
+            Last Record Sql Format
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.OracleQuerySetting.ConnectionType">
+            <summary>
+            Gets Db Connection Type.
+            </summary>
+        </member>
+        <member name="T:Coddie.Data.PgSqlQuerySetting">
+            <summary>
+            Represents Parameter Prefix, Column-Table Prefix And Suffix and last IdentityInsert Part.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.PgSqlQuerySetting.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Data.PgSqlQuerySetting"/> class.
+            </summary>
+            <param name="connectionType">Database Connection type.</param>
+        </member>
+        <member name="P:Coddie.Data.PgSqlQuerySetting.ParameterPrefix">
+            <summary>
+            Gets Parameter Name Prefix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.PgSqlQuerySetting.Prefix">
+            <summary>
+            Gets Table and Column Name Prefix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.PgSqlQuerySetting.Suffix">
+            <summary>
+            Gets Table and Column Name Suffix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.PgSqlQuerySetting.StringConcatOperation">
+            <summary>
+            Gets the string concat operation.
+            </summary>
+            <value>The string concat operation.</value>
+        </member>
+        <member name="P:Coddie.Data.PgSqlQuerySetting.SkipAndTakeFormat">
+            <summary>
+            Gets the Skip and take format.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.PgSqlQuerySetting.LastFormat">
+            <summary>
+            Last Record Sql Format
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.PgSqlQuerySetting.ConnectionType">
+            <summary>
+            Gets Db Connection Type.
+            </summary>
+        </member>
+        <member name="T:Coddie.Data.SqlBaseQuerySettings">
+            <summary>
+            Represents Parameter Prefix, Column-Table Prefix And Suffix and last IdentityInsert Part.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.SqlBaseQuerySettings.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Data.SqlBaseQuerySettings"/> class.
+            </summary>
+            <param name="connectionType">Database Connection type.</param>
+        </member>
+        <member name="P:Coddie.Data.SqlBaseQuerySettings.ParameterPrefix">
+            <summary>
+            Gets Parameter Name Prefix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.SqlBaseQuerySettings.Prefix">
+            <summary>
+            Gets Table and Column Name Prefix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.SqlBaseQuerySettings.Suffix">
+            <summary>
+            Gets Table and Column Name Suffix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.SqlBaseQuerySettings.StringConcatOperation">
+            <summary>
+            Gets the string concat operation.
+            </summary>
+            <value>The string concat operation.</value>
+        </member>
+        <member name="P:Coddie.Data.SqlBaseQuerySettings.SkipAndTakeFormat">
+            <summary>
+            Gets the Skip and take format.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.SqlBaseQuerySettings.LastFormat">
+            <summary>
+            Last Record Sql Format
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.SqlBaseQuerySettings.ConnectionType">
+            <summary>
+            Gets Db Connection Type.
+            </summary>
+        </member>
+        <member name="T:Coddie.Data.SqlCEQuerySetting">
+            <summary>
+            Represents Parameter Prefix, Column-Table Prefix And Suffix and last IdentityInsert Part.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.SqlCEQuerySetting.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Data.SqlCEQuerySetting"/> class.
+            </summary>
+            <param name="connectionType">Database Connection type.</param>
+        </member>
+        <member name="P:Coddie.Data.SqlCEQuerySetting.ParameterPrefix">
+            <summary>
+            Gets Parameter Name Prefix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.SqlCEQuerySetting.Prefix">
+            <summary>
+            Gets Table and Column Name Prefix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.SqlCEQuerySetting.Suffix">
+            <summary>
+            Gets Table and Column Name Suffix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.SqlCEQuerySetting.StringConcatOperation">
+            <summary>
+            Gets the string concat operation.
+            </summary>
+            <value>The string concat operation.</value>
+        </member>
+        <member name="P:Coddie.Data.SqlCEQuerySetting.SkipAndTakeFormat">
+            <summary>
+            Gets the Skip and take format.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.SqlCEQuerySetting.LastFormat">
+            <summary>
+            Last Record Sql Format
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.SqlCEQuerySetting.ConnectionType">
+            <summary>
+            Gets Db Connection Type.
+            </summary>
+        </member>
+        <member name="T:Coddie.Data.SqlDatabaseQuerySetting">
+            <summary>
+            Represents Parameter Prefix, Column-Table Prefix And Suffix and last IdentityInsert Part.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.SqlDatabaseQuerySetting.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Data.SqlDatabaseQuerySetting"/> class.
+            </summary>
+            <param name="connectionType">Database Connection type.</param>
+        </member>
+        <member name="P:Coddie.Data.SqlDatabaseQuerySetting.ParameterPrefix">
+            <summary>
+            Gets Parameter Name Prefix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.SqlDatabaseQuerySetting.Prefix">
+            <summary>
+            Gets Table and Column Name Prefix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.SqlDatabaseQuerySetting.Suffix">
+            <summary>
+            Gets Table and Column Name Suffix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.SqlDatabaseQuerySetting.StringConcatOperation">
+            <summary>
+            Gets the string concat operation.
+            </summary>
+            <value>The string concat operation.</value>
+        </member>
+        <member name="P:Coddie.Data.SqlDatabaseQuerySetting.SkipAndTakeFormat">
+            <summary>
+            Gets the Skip and take format.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.SqlDatabaseQuerySetting.LastFormat">
+            <summary>
+            Last Record Sql Format
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.SqlDatabaseQuerySetting.ConnectionType">
+            <summary>
+            Gets Db Connection Type.
+            </summary>
+        </member>
+        <member name="T:Coddie.Data.SQLiteQuerySetting">
+            <summary>
+            Represents Parameter Prefix, Column-Table Prefix And Suffix and last IdentityInsert Part.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.SQLiteQuerySetting.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Data.SQLiteQuerySetting"/> class.
+            </summary>
+            <param name="connectionType">Database Connection type.</param>
+        </member>
+        <member name="P:Coddie.Data.SQLiteQuerySetting.ParameterPrefix">
+            <summary>
+            Gets Parameter Name Prefix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.SQLiteQuerySetting.Prefix">
+            <summary>
+            Gets Table and Column Name Prefix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.SQLiteQuerySetting.Suffix">
+            <summary>
+            Gets Table and Column Name Suffix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.SQLiteQuerySetting.StringConcatOperation">
+            <summary>
+            Gets the string concat operation.
+            </summary>
+            <value>The string concat operation.</value>
+        </member>
+        <member name="P:Coddie.Data.SQLiteQuerySetting.SkipAndTakeFormat">
+            <summary>
+            Gets the Skip and take format.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.SQLiteQuerySetting.LastFormat">
+            <summary>
+            Last Record Sql Format
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.SQLiteQuerySetting.ConnectionType">
+            <summary>
+            Gets Db Connection Type.
+            </summary>
+        </member>
+        <member name="T:Coddie.Data.SynergyQuerySetting">
+            <summary>
+            Represents Parameter Prefix, Column-Table Prefix And Suffix and last IdentityInsert Part.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.SynergyQuerySetting.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Data.SynergyQuerySetting"/> class.
+            </summary>
+            <param name="connectionType">Database Connection type.</param>
+        </member>
+        <member name="P:Coddie.Data.SynergyQuerySetting.ParameterPrefix">
+            <summary>
+            Gets Parameter Name Prefix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.SynergyQuerySetting.Prefix">
+            <summary>
+            Gets Table and Column Name Prefix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.SynergyQuerySetting.Suffix">
+            <summary>
+            Gets Table and Column Name Suffix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.SynergyQuerySetting.StringConcatOperation">
+            <summary>
+            Gets the string concat operation.
+            </summary>
+            <value>The string concat operation.</value>
+        </member>
+        <member name="P:Coddie.Data.SynergyQuerySetting.SkipAndTakeFormat">
+            <summary>
+            Gets the Skip and take format.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.SynergyQuerySetting.LastFormat">
+            <summary>
+            Last Record Sql Format
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.SynergyQuerySetting.ConnectionType">
+            <summary>
+            Gets Db Connection Type.
+            </summary>
+        </member>
+        <member name="T:Coddie.Data.VistaDbQuerySetting">
+            <summary>
+            Represents Parameter Prefix, Column-Table Prefix And Suffix and last IdentityInsert Part.
+            </summary>
+        </member>
+        <member name="M:Coddie.Data.VistaDbQuerySetting.#ctor(Coddie.Data.Enums.DbConnectionTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Coddie.Data.VistaDbQuerySetting"/> class.
+            </summary>
+            <param name="connectionType">Database Connection type.</param>
+        </member>
+        <member name="P:Coddie.Data.VistaDbQuerySetting.ParameterPrefix">
+            <summary>
+            Gets Parameter Name Prefix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.VistaDbQuerySetting.Prefix">
+            <summary>
+            Gets Table and Column Name Prefix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.VistaDbQuerySetting.Suffix">
+            <summary>
+            Gets Table and Column Name Suffix.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.VistaDbQuerySetting.StringConcatOperation">
+            <summary>
+            Gets the string concat operation.
+            </summary>
+            <value>The string concat operation.</value>
+        </member>
+        <member name="P:Coddie.Data.VistaDbQuerySetting.SkipAndTakeFormat">
+            <summary>
+            Gets the Skip and take format.
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.VistaDbQuerySetting.LastFormat">
+            <summary>
+            Last Record Sql Format
+            </summary>
+        </member>
+        <member name="P:Coddie.Data.VistaDbQuerySetting.ConnectionType">
+            <summary>
+            Gets Db Connection Type.
+            </summary>
+        </member>
+    </members>
+</doc>
